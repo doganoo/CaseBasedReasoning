@@ -1,0 +1,5256 @@
+1
+Query Description:
+18
+1. Case
+============
+Case Description:
+1
+1. attribute: Project Leader Experience
+	if f(19-92) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-92)*(2/5)) will be operated
+f(19 - 92) = f(-73) = s = 6.2080754094036E-10
+w = 0.090909090909091
+s * w^1 = 5.6437049176396E-11
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-48) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-92)*(2/5)) will be operated
+f(15 - 48) = f(-33) = s =0.00010103940183709
+w = 0.090909090909091
+s * w^1 = 9.1854001670085E-6
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-36.9565217391304) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-92)*(2/5)) will be operated
+f(52.6315789473684 - 36.9565217391304) = f(15.675057208238) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 4 | == 0, then y will be 1
+	if | 6 - 4 | == 1, then y will be 0.9
+	if | 6 - 4 | == 2, then y will be 0.8
+	if | 6 - 4 | == 3, then y will be 0.7
+	if | 6 - 4 | == 4, then y will be 0.6
+	if | 6 - 4 | == 5, then y will be 0.5
+	if | 6 - 4 | == 6, then y will be 0.4
+	if | 6 - 4 | == 7, then y will be 0.3
+	if | 6 - 4 | == 8, then y will be 0.2
+	if | 6 - 4 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-90) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-90)*(2/5)) will be operated
+f(52.6315789473684 - 36.9565217391304) = f(-79) = s = 5.6318389500743E-11
+w = 0.090909090909091
+s * w^1 = 5.1198535909766E-12
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.38182736727991
+sum^1: 0.38182736727991
+2. Case
+============
+Case Description:
+2
+1. attribute: Project Leader Experience
+	if f(19-68) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-68)*(2/5)) will be operated
+f(19 - 68) = f(-49) = s = 9.1660877362476E-6
+w = 0.090909090909091
+s * w^1 = 8.3328070329524E-7
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-21) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-68)*(2/5)) will be operated
+f(15 - 21) = f(-6) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-42.6470588235294) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-68)*(2/5)) will be operated
+f(52.6315789473684 - 42.6470588235294) = f(9.984520123839) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 2, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.75
+	if | 2 - 2 | == 2, then y will be 0.5
+	if | 2 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-74) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-74)*(2/5)) will be operated
+f(52.6315789473684 - 42.6470588235294) = f(-63) = s = 3.3894943261969E-8
+w = 0.090909090909091
+s * w^1 = 3.0813584783608E-9
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.58030386666509
+sum^1: 0.58030386666509
+3. Case
+============
+Case Description:
+3
+1. attribute: Project Leader Experience
+	if f(19-97) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(19 - 97) = f(-78) = s = 8.4017164388589E-11
+w = 0.090909090909091
+s * w^1 = 7.6379240353262E-12
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-86) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(15 - 86) = f(-71) = s =2.5305483615119E-11
+w = 0.090909090909091
+s * w^1 = 2.3004985104654E-12
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-77.319587628866) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(52.6315789473684 - 77.319587628866) = f(-24.688008681498) = s =0.15332376648557
+w = 0.090909090909091
+s * w^1 = 0.013938524225961
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 3, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 4 | == 0, then y will be 1
+	if | 1 - 4 | == 1, then y will be 0.75
+	if | 1 - 4 | == 2, then y will be 0.5
+	if | 1 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+9. attribute: Project
+	if | 6 - 7 | == 0, then y will be 1
+	if | 6 - 7 | == 1, then y will be 0.9
+	if | 6 - 7 | == 2, then y will be 0.8
+	if | 6 - 7 | == 3, then y will be 0.7
+	if | 6 - 7 | == 4, then y will be 0.6
+	if | 6 - 7 | == 5, then y will be 0.5
+	if | 6 - 7 | == 6, then y will be 0.4
+	if | 6 - 7 | == 7, then y will be 0.3
+	if | 6 - 7 | == 8, then y will be 0.2
+	if | 6 - 7 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.9
+w = 0.060606060606061
+s * w^1 = 0.054545454545455
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-28) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-28)*(2/5)) will be operated
+f(52.6315789473684 - 77.319587628866) = f(-17) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.40181731211469
+sum^1: 0.40181731211469
+4. Case
+============
+Case Description:
+4
+1. attribute: Project Leader Experience
+	if f(19-15) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-15)*(2/5)) will be operated
+f(19 - 15) = f(4) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-8) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-15)*(2/5)) will be operated
+f(15 - 8) = f(7) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-73.3333333333333) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-15)*(2/5)) will be operated
+f(52.6315789473684 - 73.3333333333333) = f(-20.701754385965) = s =0.75525355295313
+w = 0.090909090909091
+s * w^1 = 0.06865941390483
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 4 | == 0, then y will be 1
+	if | 1 - 4 | == 1, then y will be 0.75
+	if | 1 - 4 | == 2, then y will be 0.5
+	if | 1 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+9. attribute: Project
+	if | 6 - 6 | == 0, then y will be 1
+	if | 6 - 6 | == 1, then y will be 0.9
+	if | 6 - 6 | == 2, then y will be 0.8
+	if | 6 - 6 | == 3, then y will be 0.7
+	if | 6 - 6 | == 4, then y will be 0.6
+	if | 6 - 6 | == 5, then y will be 0.5
+	if | 6 - 6 | == 6, then y will be 0.4
+	if | 6 - 6 | == 7, then y will be 0.3
+	if | 6 - 6 | == 8, then y will be 0.2
+	if | 6 - 6 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-48) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-48)*(2/5)) will be operated
+f(52.6315789473684 - 73.3333333333333) = f(-37) = s = 0.0011137751478448
+w = 0.090909090909091
+s * w^1 = 0.00010125228616771
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.61421521164554
+sum^1: 0.61421521164554
+5. Case
+============
+Case Description:
+5
+1. attribute: Project Leader Experience
+	if f(19-93) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(19 - 93) = f(-74) = s = 4.1613973942241E-10
+w = 0.090909090909091
+s * w^1 = 3.7830885402038E-11
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-56) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(15 - 56) = f(-41) = s =4.1185887075357E-6
+w = 0.090909090909091
+s * w^1 = 3.7441715523052E-7
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-59.1397849462366) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(52.6315789473684 - 59.1397849462366) = f(-6.5082059988682) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-70) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-70)*(2/5)) will be operated
+f(52.6315789473684 - 59.1397849462366) = f(-59) = s = 1.6788275299957E-7
+w = 0.090909090909091
+s * w^1 = 1.5262068454506E-8
+
+
+16. attribute: Test Kind
+	if | 4 - 3 | == 0, then y will be 1
+	if | 4 - 3 | == 1, then y will be 0.75
+	if | 4 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+sum: 0.46666705638372
+sum^1: 0.46666705638372
+6. Case
+============
+Case Description:
+6
+1. attribute: Project Leader Experience
+	if f(19-5) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-5)*(2/5)) will be operated
+f(19 - 5) = f(14) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-5) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-5)*(2/5)) will be operated
+f(15 - 5) = f(10) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-100) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-5)*(2/5)) will be operated
+f(52.6315789473684 - 100) = f(-47.368421052632) = s =1.7604281454347E-5
+w = 0.090909090909091
+s * w^1 = 1.6003892231224E-6
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 5, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 10 | == 0, then y will be 1
+	if | 6 - 10 | == 1, then y will be 0.9
+	if | 6 - 10 | == 2, then y will be 0.8
+	if | 6 - 10 | == 3, then y will be 0.7
+	if | 6 - 10 | == 4, then y will be 0.6
+	if | 6 - 10 | == 5, then y will be 0.5
+	if | 6 - 10 | == 6, then y will be 0.4
+	if | 6 - 10 | == 7, then y will be 0.3
+	if | 6 - 10 | == 8, then y will be 0.2
+	if | 6 - 10 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-95) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-95)*(2/5)) will be operated
+f(52.6315789473684 - 100) = f(-84) = s = 7.6218651945129E-12
+w = 0.090909090909091
+s * w^1 = 6.9289683586481E-13
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.51363796402628
+sum^1: 0.51363796402628
+7. Case
+============
+Case Description:
+7
+1. attribute: Project Leader Experience
+	if f(19-45) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(19 - 45) = f(-26) = s = 0.090717953289412
+w = 0.090909090909091
+s * w^1 = 0.0082470866626739
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-38) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(15 - 38) = f(-23) = s =0.0055165644207608
+w = 0.090909090909091
+s * w^1 = 0.0005015058564328
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-62.2222222222222) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(52.6315789473684 - 62.2222222222222) = f(-9.5906432748538) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 4 | == 0, then y will be 1
+	if | 6 - 4 | == 1, then y will be 0.9
+	if | 6 - 4 | == 2, then y will be 0.8
+	if | 6 - 4 | == 3, then y will be 0.7
+	if | 6 - 4 | == 4, then y will be 0.6
+	if | 6 - 4 | == 5, then y will be 0.5
+	if | 6 - 4 | == 6, then y will be 0.4
+	if | 6 - 4 | == 7, then y will be 0.3
+	if | 6 - 4 | == 8, then y will be 0.2
+	if | 6 - 4 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-42) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-42)*(2/5)) will be operated
+f(52.6315789473684 - 62.2222222222222) = f(-31) = s = 0.012277339903068
+w = 0.090909090909091
+s * w^1 = 0.0011161218093699
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.52047077493454
+sum^1: 0.52047077493454
+8. Case
+============
+Case Description:
+8
+1. attribute: Project Leader Experience
+	if f(19-12) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-12)*(2/5)) will be operated
+f(19 - 12) = f(7) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-11) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-12)*(2/5)) will be operated
+f(15 - 11) = f(4) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-75) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-12)*(2/5)) will be operated
+f(52.6315789473684 - 75) = f(-22.368421052632) = s =0.38776010329632
+w = 0.090909090909091
+s * w^1 = 0.035250918481484
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 2, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 6 | == 0, then y will be 1
+	if | 6 - 6 | == 1, then y will be 0.9
+	if | 6 - 6 | == 2, then y will be 0.8
+	if | 6 - 6 | == 3, then y will be 0.7
+	if | 6 - 6 | == 4, then y will be 0.6
+	if | 6 - 6 | == 5, then y will be 0.5
+	if | 6 - 6 | == 6, then y will be 0.4
+	if | 6 - 6 | == 7, then y will be 0.3
+	if | 6 - 6 | == 8, then y will be 0.2
+	if | 6 - 6 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-42) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-42)*(2/5)) will be operated
+f(52.6315789473684 - 75) = f(-31) = s = 0.012277339903068
+w = 0.090909090909091
+s * w^1 = 0.0011161218093699
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.55151855544237
+sum^1: 0.55151855544237
+9. Case
+============
+Case Description:
+9
+1. attribute: Project Leader Experience
+	if f(19-46) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-46)*(2/5)) will be operated
+f(19 - 46) = f(-27) = s = 0.060810062625218
+w = 0.090909090909091
+s * w^1 = 0.0055281875113835
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-32) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-46)*(2/5)) will be operated
+f(15 - 32) = f(-17) = s =0.060810062625218
+w = 0.090909090909091
+s * w^1 = 0.0055281875113835
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-54.3478260869565) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-46)*(2/5)) will be operated
+f(52.6315789473684 - 54.3478260869565) = f(-1.7162471395881) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 3, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 7 | == 0, then y will be 1
+	if | 6 - 7 | == 1, then y will be 0.9
+	if | 6 - 7 | == 2, then y will be 0.8
+	if | 6 - 7 | == 3, then y will be 0.7
+	if | 6 - 7 | == 4, then y will be 0.6
+	if | 6 - 7 | == 5, then y will be 0.5
+	if | 6 - 7 | == 6, then y will be 0.4
+	if | 6 - 7 | == 7, then y will be 0.3
+	if | 6 - 7 | == 8, then y will be 0.2
+	if | 6 - 7 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.9
+w = 0.060606060606061
+s * w^1 = 0.054545454545455
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-110) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-110)*(2/5)) will be operated
+f(52.6315789473684 - 54.3478260869565) = f(-99) = s = 1.8892714941156E-14
+w = 0.090909090909091
+s * w^1 = 1.7175195401051E-15
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.42923819320459
+sum^1: 0.42923819320459
+10. Case
+============
+Case Description:
+10
+1. attribute: Project Leader Experience
+	if f(19-18) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-18)*(2/5)) will be operated
+f(19 - 18) = f(1) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-9) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-18)*(2/5)) will be operated
+f(15 - 9) = f(6) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-50) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-18)*(2/5)) will be operated
+f(52.6315789473684 - 50) = f(2.6315789473684) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 2, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 4 | == 0, then y will be 1
+	if | 6 - 4 | == 1, then y will be 0.9
+	if | 6 - 4 | == 2, then y will be 0.8
+	if | 6 - 4 | == 3, then y will be 0.7
+	if | 6 - 4 | == 4, then y will be 0.6
+	if | 6 - 4 | == 5, then y will be 0.5
+	if | 6 - 4 | == 6, then y will be 0.4
+	if | 6 - 4 | == 7, then y will be 0.3
+	if | 6 - 4 | == 8, then y will be 0.2
+	if | 6 - 4 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-143) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-143)*(2/5)) will be operated
+f(52.6315789473684 - 50) = f(-132) = s = 3.4962880895677E-20
+w = 0.090909090909091
+s * w^1 = 3.1784437177889E-21
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.56363636363636
+sum^1: 0.56363636363636
+11. Case
+============
+Case Description:
+11
+1. attribute: Project Leader Experience
+	if f(19-82) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-82)*(2/5)) will be operated
+f(19 - 82) = f(-63) = s = 3.3894943261969E-8
+w = 0.090909090909091
+s * w^1 = 3.0813584783608E-9
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-60) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-82)*(2/5)) will be operated
+f(15 - 60) = f(-45) = s =8.3152871910357E-7
+w = 0.090909090909091
+s * w^1 = 7.5593519918506E-8
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-52.4390243902439) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-82)*(2/5)) will be operated
+f(52.6315789473684 - 52.4390243902439) = f(0.1925545571245) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 2, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 10 | == 0, then y will be 1
+	if | 6 - 10 | == 1, then y will be 0.9
+	if | 6 - 10 | == 2, then y will be 0.8
+	if | 6 - 10 | == 3, then y will be 0.7
+	if | 6 - 10 | == 4, then y will be 0.6
+	if | 6 - 10 | == 5, then y will be 0.5
+	if | 6 - 10 | == 6, then y will be 0.4
+	if | 6 - 10 | == 7, then y will be 0.3
+	if | 6 - 10 | == 8, then y will be 0.2
+	if | 6 - 10 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.75
+	if | 2 - 2 | == 2, then y will be 0.5
+	if | 2 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-142) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-142)*(2/5)) will be operated
+f(52.6315789473684 - 52.4390243902439) = f(-131) = s = 5.2158489220862E-20
+w = 0.090909090909091
+s * w^1 = 4.7416808382602E-21
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.50606068473548
+sum^1: 0.50606068473548
+12. Case
+============
+Case Description:
+12
+1. attribute: Project Leader Experience
+	if f(19-93) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(19 - 93) = f(-74) = s = 4.1613973942241E-10
+w = 0.090909090909091
+s * w^1 = 3.7830885402038E-11
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-37) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(15 - 37) = f(-22) = s =0.00822974704902
+w = 0.090909090909091
+s * w^1 = 0.00074815882263818
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-92.4731182795699) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-93)*(2/5)) will be operated
+f(52.6315789473684 - 92.4731182795699) = f(-39.841539332201) = s =0.00035741401834579
+w = 0.090909090909091
+s * w^1 = 3.2492183485981E-5
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 5, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 1 | == 0, then y will be 1
+	if | 1 - 1 | == 1, then y will be 0.75
+	if | 1 - 1 | == 2, then y will be 0.5
+	if | 1 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+9. attribute: Project
+	if | 6 - 10 | == 0, then y will be 1
+	if | 6 - 10 | == 1, then y will be 0.9
+	if | 6 - 10 | == 2, then y will be 0.8
+	if | 6 - 10 | == 3, then y will be 0.7
+	if | 6 - 10 | == 4, then y will be 0.6
+	if | 6 - 10 | == 5, then y will be 0.5
+	if | 6 - 10 | == 6, then y will be 0.4
+	if | 6 - 10 | == 7, then y will be 0.3
+	if | 6 - 10 | == 8, then y will be 0.2
+	if | 6 - 10 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-97) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-97)*(2/5)) will be operated
+f(52.6315789473684 - 92.4731182795699) = f(-86) = s = 3.4247247924916E-12
+w = 0.090909090909091
+s * w^1 = 3.1133861749923E-13
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.42350792377154
+sum^1: 0.42350792377154
+13. Case
+============
+Case Description:
+13
+1. attribute: Project Leader Experience
+	if f(19-38) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-38)*(2/5)) will be operated
+f(19 - 38) = f(-19) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-14) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-38)*(2/5)) will be operated
+f(15 - 14) = f(1) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-26.3157894736842) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-38)*(2/5)) will be operated
+f(52.6315789473684 - 26.3157894736842) = f(26.315789473684) = s =0.079953042173645
+w = 0.090909090909091
+s * w^1 = 0.0072684583794223
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 6, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-102) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-102)*(2/5)) will be operated
+f(52.6315789473684 - 26.3157894736842) = f(-91) = s = 4.634860997993E-13
+w = 0.090909090909091
+s * w^1 = 4.2135099981754E-14
+
+
+16. attribute: Test Kind
+	if | 4 - 3 | == 0, then y will be 1
+	if | 4 - 3 | == 1, then y will be 0.75
+	if | 4 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+sum: 0.50423815534916
+sum^1: 0.50423815534916
+14. Case
+============
+Case Description:
+14
+1. attribute: Project Leader Experience
+	if f(19-88) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-88)*(2/5)) will be operated
+f(19 - 88) = f(-69) = s = 3.0748798795866E-9
+w = 0.090909090909091
+s * w^1 = 2.7953453450787E-10
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-6) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-88)*(2/5)) will be operated
+f(15 - 6) = f(9) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-9.09090909090909) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-88)*(2/5)) will be operated
+f(52.6315789473684 - 9.09090909090909) = f(43.540669856459) = s =8.1389202385294E-5
+w = 0.090909090909091
+s * w^1 = 7.3990183986631E-6
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 1 | == 0, then y will be 1
+	if | 6 - 1 | == 1, then y will be 0.9
+	if | 6 - 1 | == 2, then y will be 0.8
+	if | 6 - 1 | == 3, then y will be 0.7
+	if | 6 - 1 | == 4, then y will be 0.6
+	if | 6 - 1 | == 5, then y will be 0.5
+	if | 6 - 1 | == 6, then y will be 0.4
+	if | 6 - 1 | == 7, then y will be 0.3
+	if | 6 - 1 | == 8, then y will be 0.2
+	if | 6 - 1 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-63) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-63)*(2/5)) will be operated
+f(52.6315789473684 - 9.09090909090909) = f(-52) = s = 2.7607725720372E-6
+w = 0.090909090909091
+s * w^1 = 2.5097932473065E-7
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.40152280179241
+sum^1: 0.40152280179241
+15. Case
+============
+Case Description:
+15
+1. attribute: Project Leader Experience
+	if f(19-10) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-10)*(2/5)) will be operated
+f(19 - 10) = f(9) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-8) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-10)*(2/5)) will be operated
+f(15 - 8) = f(7) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-60) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-10)*(2/5)) will be operated
+f(52.6315789473684 - 60) = f(-7.3684210526316) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-83) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-83)*(2/5)) will be operated
+f(52.6315789473684 - 60) = f(-72) = s = 9.2613602205678E-10
+w = 0.090909090909091
+s * w^1 = 8.4194183823343E-11
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.69393939402359
+sum^1: 0.69393939402359
+16. Case
+============
+Case Description:
+16
+1. attribute: Project Leader Experience
+	if f(19-28) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-28)*(2/5)) will be operated
+f(19 - 28) = f(-9) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-8) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-28)*(2/5)) will be operated
+f(15 - 8) = f(7) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-85.7142857142857) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-28)*(2/5)) will be operated
+f(52.6315789473684 - 85.7142857142857) = f(-33.082706766917) = s =0.0053370473653562
+w = 0.090909090909091
+s * w^1 = 0.00048518612412329
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 6, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 6 | == 0, then y will be 1
+	if | 6 - 6 | == 1, then y will be 0.9
+	if | 6 - 6 | == 2, then y will be 0.8
+	if | 6 - 6 | == 3, then y will be 0.7
+	if | 6 - 6 | == 4, then y will be 0.6
+	if | 6 - 6 | == 5, then y will be 0.5
+	if | 6 - 6 | == 6, then y will be 0.4
+	if | 6 - 6 | == 7, then y will be 0.3
+	if | 6 - 6 | == 8, then y will be 0.2
+	if | 6 - 6 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-32) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-32)*(2/5)) will be operated
+f(52.6315789473684 - 85.7142857142857) = f(-21) = s = 0.67032004603564
+w = 0.090909090909091
+s * w^1 = 0.06093818600324
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.60687791758191
+sum^1: 0.60687791758191
+17. Case
+============
+Case Description:
+17
+1. attribute: Project Leader Experience
+	if f(19-97) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(19 - 97) = f(-78) = s = 8.4017164388589E-11
+w = 0.090909090909091
+s * w^1 = 7.6379240353262E-12
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-7) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(15 - 7) = f(8) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-60.8247422680412) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(52.6315789473684 - 60.8247422680412) = f(-8.1931633206728) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 6 | == 0, then y will be 1
+	if | 6 - 6 | == 1, then y will be 0.9
+	if | 6 - 6 | == 2, then y will be 0.8
+	if | 6 - 6 | == 3, then y will be 0.7
+	if | 6 - 6 | == 4, then y will be 0.6
+	if | 6 - 6 | == 5, then y will be 0.5
+	if | 6 - 6 | == 6, then y will be 0.4
+	if | 6 - 6 | == 7, then y will be 0.3
+	if | 6 - 6 | == 8, then y will be 0.2
+	if | 6 - 6 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-82) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-82)*(2/5)) will be operated
+f(52.6315789473684 - 60.8247422680412) = f(-71) = s = 1.3816325910795E-9
+w = 0.090909090909091
+s * w^1 = 1.2560296282541E-10
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.507575757709
+sum^1: 0.507575757709
+18. Case
+============
+Case Description:
+18
+1. attribute: Project Leader Experience
+	if f(19-19) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(19 - 19) = f(0) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-15) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(15 - 15) = f(0) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-52.6315789473684) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(52.6315789473684 - 52.6315789473684) = f(0) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 1 | == 0, then y will be 1
+	if | 1 - 1 | == 1, then y will be 0.75
+	if | 1 - 1 | == 2, then y will be 0.5
+	if | 1 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+9. attribute: Project
+	if | 6 - 6 | == 0, then y will be 1
+	if | 6 - 6 | == 1, then y will be 0.9
+	if | 6 - 6 | == 2, then y will be 0.8
+	if | 6 - 6 | == 3, then y will be 0.7
+	if | 6 - 6 | == 4, then y will be 0.6
+	if | 6 - 6 | == 5, then y will be 0.5
+	if | 6 - 6 | == 6, then y will be 0.4
+	if | 6 - 6 | == 7, then y will be 0.3
+	if | 6 - 6 | == 8, then y will be 0.2
+	if | 6 - 6 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.75
+	if | 2 - 2 | == 2, then y will be 0.5
+	if | 2 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-11) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-11)*(2/5)) will be operated
+f(52.6315789473684 - 52.6315789473684) = f(0) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 1
+sum^1: 1
+19. Case
+============
+Case Description:
+19
+1. attribute: Project Leader Experience
+	if f(19-13) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-13)*(2/5)) will be operated
+f(19 - 13) = f(6) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-6) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-13)*(2/5)) will be operated
+f(15 - 6) = f(9) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-53.8461538461538) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-13)*(2/5)) will be operated
+f(52.6315789473684 - 53.8461538461538) = f(-1.2145748987854) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 4 | == 0, then y will be 1
+	if | 1 - 4 | == 1, then y will be 0.75
+	if | 1 - 4 | == 2, then y will be 0.5
+	if | 1 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+9. attribute: Project
+	if | 6 - 5 | == 0, then y will be 1
+	if | 6 - 5 | == 1, then y will be 0.9
+	if | 6 - 5 | == 2, then y will be 0.8
+	if | 6 - 5 | == 3, then y will be 0.7
+	if | 6 - 5 | == 4, then y will be 0.6
+	if | 6 - 5 | == 5, then y will be 0.5
+	if | 6 - 5 | == 6, then y will be 0.4
+	if | 6 - 5 | == 7, then y will be 0.3
+	if | 6 - 5 | == 8, then y will be 0.2
+	if | 6 - 5 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.9
+w = 0.060606060606061
+s * w^1 = 0.054545454545455
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-118) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-118)*(2/5)) will be operated
+f(52.6315789473684 - 53.8461538461538) = f(-107) = s = 7.7010870013654E-16
+w = 0.090909090909091
+s * w^1 = 7.0009881830595E-17
+
+
+16. attribute: Test Kind
+	if | 4 - 3 | == 0, then y will be 1
+	if | 4 - 3 | == 1, then y will be 0.75
+	if | 4 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+sum: 0.55454545454545
+sum^1: 0.55454545454545
+20. Case
+============
+Case Description:
+20
+1. attribute: Project Leader Experience
+	if f(19-71) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-71)*(2/5)) will be operated
+f(19 - 71) = f(-52) = s = 2.7607725720372E-6
+w = 0.090909090909091
+s * w^1 = 2.5097932473065E-7
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-19) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-71)*(2/5)) will be operated
+f(15 - 19) = f(-4) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-87.3239436619718) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-71)*(2/5)) will be operated
+f(52.6315789473684 - 87.3239436619718) = f(-34.692364714603) = s =0.0028033339159334
+w = 0.090909090909091
+s * w^1 = 0.00025484853781213
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 3, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 8 | == 0, then y will be 1
+	if | 6 - 8 | == 1, then y will be 0.9
+	if | 6 - 8 | == 2, then y will be 0.8
+	if | 6 - 8 | == 3, then y will be 0.7
+	if | 6 - 8 | == 4, then y will be 0.6
+	if | 6 - 8 | == 5, then y will be 0.5
+	if | 6 - 8 | == 6, then y will be 0.4
+	if | 6 - 8 | == 7, then y will be 0.3
+	if | 6 - 8 | == 8, then y will be 0.2
+	if | 6 - 8 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-98) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-98)*(2/5)) will be operated
+f(52.6315789473684 - 87.3239436619718) = f(-87) = s = 2.2956616805624E-12
+w = 0.090909090909091
+s * w^1 = 2.0869651641476E-13
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.42752782679007
+sum^1: 0.42752782679007
+21. Case
+============
+Case Description:
+21
+1. attribute: Project Leader Experience
+	if f(19-27) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-27)*(2/5)) will be operated
+f(19 - 27) = f(-8) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-7) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-27)*(2/5)) will be operated
+f(15 - 7) = f(8) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-74.0740740740741) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-27)*(2/5)) will be operated
+f(52.6315789473684 - 74.0740740740741) = f(-21.442495126706) = s =0.56158167842923
+w = 0.090909090909091
+s * w^1 = 0.051052879857203
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 6, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 10 | == 0, then y will be 1
+	if | 6 - 10 | == 1, then y will be 0.9
+	if | 6 - 10 | == 2, then y will be 0.8
+	if | 6 - 10 | == 3, then y will be 0.7
+	if | 6 - 10 | == 4, then y will be 0.6
+	if | 6 - 10 | == 5, then y will be 0.5
+	if | 6 - 10 | == 6, then y will be 0.4
+	if | 6 - 10 | == 7, then y will be 0.3
+	if | 6 - 10 | == 8, then y will be 0.2
+	if | 6 - 10 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.75
+	if | 2 - 2 | == 2, then y will be 0.5
+	if | 2 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-85) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-85)*(2/5)) will be operated
+f(52.6315789473684 - 74.0740740740741) = f(-74) = s = 4.1613973942241E-10
+w = 0.090909090909091
+s * w^1 = 3.7830885402038E-11
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.63287106171322
+sum^1: 0.63287106171322
+22. Case
+============
+Case Description:
+22
+1. attribute: Project Leader Experience
+	if f(19-60) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-60)*(2/5)) will be operated
+f(19 - 60) = f(-41) = s = 0.00022486732417885
+w = 0.090909090909091
+s * w^1 = 2.0442484016259E-5
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-26) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-60)*(2/5)) will be operated
+f(15 - 26) = f(-11) = s =0.67032004603564
+w = 0.090909090909091
+s * w^1 = 0.06093818600324
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-95) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-60)*(2/5)) will be operated
+f(52.6315789473684 - 95) = f(-42.368421052632) = s =0.00013007902324753
+w = 0.090909090909091
+s * w^1 = 1.1825365749776E-5
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 8 | == 0, then y will be 1
+	if | 6 - 8 | == 1, then y will be 0.9
+	if | 6 - 8 | == 2, then y will be 0.8
+	if | 6 - 8 | == 3, then y will be 0.7
+	if | 6 - 8 | == 4, then y will be 0.6
+	if | 6 - 8 | == 5, then y will be 0.5
+	if | 6 - 8 | == 6, then y will be 0.4
+	if | 6 - 8 | == 7, then y will be 0.3
+	if | 6 - 8 | == 8, then y will be 0.2
+	if | 6 - 8 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-74) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-74)*(2/5)) will be operated
+f(52.6315789473684 - 95) = f(-63) = s = 3.3894943261969E-8
+w = 0.090909090909091
+s * w^1 = 3.0813584783608E-9
+
+
+16. attribute: Test Kind
+	if | 4 - 4 | == 0, then y will be 1
+	if | 4 - 4 | == 1, then y will be 0.75
+	if | 4 - 4 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+sum: 0.5943037902677
+sum^1: 0.5943037902677
+23. Case
+============
+Case Description:
+23
+1. attribute: Project Leader Experience
+	if f(19-80) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-80)*(2/5)) will be operated
+f(19 - 80) = f(-61) = s = 7.5434583498442E-8
+w = 0.090909090909091
+s * w^1 = 6.8576894089493E-9
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-38) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-80)*(2/5)) will be operated
+f(15 - 38) = f(-23) = s =0.0055165644207608
+w = 0.090909090909091
+s * w^1 = 0.0005015058564328
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-16.25) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-80)*(2/5)) will be operated
+f(52.6315789473684 - 16.25) = f(36.381578947368) = s =0.00142635708379
+w = 0.090909090909091
+s * w^1 = 0.00012966882579909
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 2, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 2 | == 0, then y will be 1
+	if | 6 - 2 | == 1, then y will be 0.9
+	if | 6 - 2 | == 2, then y will be 0.8
+	if | 6 - 2 | == 3, then y will be 0.7
+	if | 6 - 2 | == 4, then y will be 0.6
+	if | 6 - 2 | == 5, then y will be 0.5
+	if | 6 - 2 | == 6, then y will be 0.4
+	if | 6 - 2 | == 7, then y will be 0.3
+	if | 6 - 2 | == 8, then y will be 0.2
+	if | 6 - 2 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-95) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-95)*(2/5)) will be operated
+f(52.6315789473684 - 16.25) = f(-84) = s = 7.6218651945129E-12
+w = 0.090909090909091
+s * w^1 = 6.9289683586481E-13
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.36275239366183
+sum^1: 0.36275239366183
+24. Case
+============
+Case Description:
+24
+1. attribute: Project Leader Experience
+	if f(19-6) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-6)*(2/5)) will be operated
+f(19 - 6) = f(13) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-5) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-6)*(2/5)) will be operated
+f(15 - 5) = f(10) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-100) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-6)*(2/5)) will be operated
+f(52.6315789473684 - 100) = f(-47.368421052632) = s =1.7604281454347E-5
+w = 0.090909090909091
+s * w^1 = 1.6003892231224E-6
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 1 | == 0, then y will be 1
+	if | 1 - 1 | == 1, then y will be 0.75
+	if | 1 - 1 | == 2, then y will be 0.5
+	if | 1 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+9. attribute: Project
+	if | 6 - 8 | == 0, then y will be 1
+	if | 6 - 8 | == 1, then y will be 0.9
+	if | 6 - 8 | == 2, then y will be 0.8
+	if | 6 - 8 | == 3, then y will be 0.7
+	if | 6 - 8 | == 4, then y will be 0.6
+	if | 6 - 8 | == 5, then y will be 0.5
+	if | 6 - 8 | == 6, then y will be 0.4
+	if | 6 - 8 | == 7, then y will be 0.3
+	if | 6 - 8 | == 8, then y will be 0.2
+	if | 6 - 8 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 0, then y will be 1
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+16. attribute: Team Experience
+	if f(11-88) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-88)*(2/5)) will be operated
+f(52.6315789473684 - 100) = f(-77) = s = 1.2533888086068E-10
+w = 0.090909090909091
+s * w^1 = 1.1394443714608E-11
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.61666826706728
+sum^1: 0.61666826706728
+25. Case
+============
+Case Description:
+25
+1. attribute: Project Leader Experience
+	if f(19-26) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-26)*(2/5)) will be operated
+f(19 - 26) = f(-7) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-17) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-26)*(2/5)) will be operated
+f(15 - 17) = f(-2) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-42.3076923076923) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-26)*(2/5)) will be operated
+f(52.6315789473684 - 42.3076923076923) = f(10.323886639676) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 5, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 1 | == 0, then y will be 1
+	if | 1 - 1 | == 1, then y will be 0.75
+	if | 1 - 1 | == 2, then y will be 0.5
+	if | 1 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+9. attribute: Project
+	if | 6 - 4 | == 0, then y will be 1
+	if | 6 - 4 | == 1, then y will be 0.9
+	if | 6 - 4 | == 2, then y will be 0.8
+	if | 6 - 4 | == 3, then y will be 0.7
+	if | 6 - 4 | == 4, then y will be 0.6
+	if | 6 - 4 | == 5, then y will be 0.5
+	if | 6 - 4 | == 6, then y will be 0.4
+	if | 6 - 4 | == 7, then y will be 0.3
+	if | 6 - 4 | == 8, then y will be 0.2
+	if | 6 - 4 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.8
+w = 0.060606060606061
+s * w^1 = 0.048484848484848
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-58) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-58)*(2/5)) will be operated
+f(52.6315789473684 - 42.3076923076923) = f(-47) = s = 2.0399503411172E-5
+w = 0.090909090909091
+s * w^1 = 1.8545003101065E-6
+
+
+16. attribute: Test Kind
+	if | 4 - 3 | == 0, then y will be 1
+	if | 4 - 3 | == 1, then y will be 0.75
+	if | 4 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+sum: 0.57121397571243
+sum^1: 0.57121397571243
+26. Case
+============
+Case Description:
+26
+1. attribute: Project Leader Experience
+	if f(19-50) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-50)*(2/5)) will be operated
+f(19 - 50) = f(-31) = s = 0.012277339903068
+w = 0.090909090909091
+s * w^1 = 0.0011161218093699
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-38) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-50)*(2/5)) will be operated
+f(15 - 38) = f(-23) = s =0.0055165644207608
+w = 0.090909090909091
+s * w^1 = 0.0005015058564328
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-36) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-50)*(2/5)) will be operated
+f(52.6315789473684 - 36) = f(16.631578947368) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 4, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 0, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-92) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-92)*(2/5)) will be operated
+f(52.6315789473684 - 36) = f(-81) = s = 2.5305483615119E-11
+w = 0.090909090909091
+s * w^1 = 2.3004985104654E-12
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.52889035494083
+sum^1: 0.52889035494083
+27. Case
+============
+Case Description:
+27
+1. attribute: Project Leader Experience
+	if f(19-97) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(19 - 97) = f(-78) = s = 8.4017164388589E-11
+w = 0.090909090909091
+s * w^1 = 7.6379240353262E-12
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-35) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(15 - 35) = f(-20) = s =0.018315638888734
+w = 0.090909090909091
+s * w^1 = 0.001665058080794
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-97.9381443298969) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-97)*(2/5)) will be operated
+f(52.6315789473684 - 97.9381443298969) = f(-45.306565382528) = s =4.0160519254864E-5
+w = 0.090909090909091
+s * w^1 = 3.6509562958967E-6
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 3, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 1 | == 0, then y will be 1
+	if | 6 - 1 | == 1, then y will be 0.9
+	if | 6 - 1 | == 2, then y will be 0.8
+	if | 6 - 1 | == 3, then y will be 0.7
+	if | 6 - 1 | == 4, then y will be 0.6
+	if | 6 - 1 | == 5, then y will be 0.5
+	if | 6 - 1 | == 6, then y will be 0.4
+	if | 6 - 1 | == 7, then y will be 0.3
+	if | 6 - 1 | == 8, then y will be 0.2
+	if | 6 - 1 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-122) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-122)*(2/5)) will be operated
+f(52.6315789473684 - 97.9381443298969) = f(-111) = s = 1.5548226503496E-16
+w = 0.090909090909091
+s * w^1 = 1.4134751366814E-17
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.26682022419624
+sum^1: 0.26682022419624
+28. Case
+============
+Case Description:
+28
+1. attribute: Project Leader Experience
+	if f(19-65) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-65)*(2/5)) will be operated
+f(19 - 65) = f(-46) = s = 3.0432483008404E-5
+w = 0.090909090909091
+s * w^1 = 2.7665893644003E-6
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-14) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-65)*(2/5)) will be operated
+f(15 - 14) = f(1) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-90.7692307692308) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-65)*(2/5)) will be operated
+f(52.6315789473684 - 90.7692307692308) = f(-38.137651821862) = s =0.00070658946770683
+w = 0.090909090909091
+s * w^1 = 6.4235406155166E-5
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 3 | == 0, then y will be 1
+	if | 1 - 3 | == 1, then y will be 0.75
+	if | 1 - 3 | == 2, then y will be 0.5
+	if | 1 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+9. attribute: Project
+	if | 6 - 7 | == 0, then y will be 1
+	if | 6 - 7 | == 1, then y will be 0.9
+	if | 6 - 7 | == 2, then y will be 0.8
+	if | 6 - 7 | == 3, then y will be 0.7
+	if | 6 - 7 | == 4, then y will be 0.6
+	if | 6 - 7 | == 5, then y will be 0.5
+	if | 6 - 7 | == 6, then y will be 0.4
+	if | 6 - 7 | == 7, then y will be 0.3
+	if | 6 - 7 | == 8, then y will be 0.2
+	if | 6 - 7 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.9
+w = 0.060606060606061
+s * w^1 = 0.054545454545455
+
+
+10. attribute: Project Novelty
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.75
+	if | 2 - 3 | == 2, then y will be 0.5
+	if | 2 - 3 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-67) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-67)*(2/5)) will be operated
+f(52.6315789473684 - 90.7692307692308) = f(-56) = s = 5.5739036926946E-7
+w = 0.090909090909091
+s * w^1 = 5.0671851751769E-8
+
+
+16. attribute: Test Kind
+	if | 4 - 1 | == 0, then y will be 1
+	if | 4 - 1 | == 1, then y will be 0.75
+	if | 4 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+sum: 0.46370341630373
+sum^1: 0.46370341630373
+29. Case
+============
+Case Description:
+29
+1. attribute: Project Leader Experience
+	if f(19-45) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(19 - 45) = f(-26) = s = 0.090717953289412
+w = 0.090909090909091
+s * w^1 = 0.0082470866626739
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-24) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(15 - 24) = f(-9) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-73.3333333333333) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-45)*(2/5)) will be operated
+f(52.6315789473684 - 73.3333333333333) = f(-20.701754385965) = s =0.75525355295313
+w = 0.090909090909091
+s * w^1 = 0.06865941390483
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+5. attribute: Customer ID
+	if 4 == 5, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+7. attribute: Internal Flag
+	if 0 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+8. attribute: Priority
+	if | 1 - 4 | == 0, then y will be 1
+	if | 1 - 4 | == 1, then y will be 0.75
+	if | 1 - 4 | == 2, then y will be 0.5
+	if | 1 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+9. attribute: Project
+	if | 6 - 10 | == 0, then y will be 1
+	if | 6 - 10 | == 1, then y will be 0.9
+	if | 6 - 10 | == 2, then y will be 0.8
+	if | 6 - 10 | == 3, then y will be 0.7
+	if | 6 - 10 | == 4, then y will be 0.6
+	if | 6 - 10 | == 5, then y will be 0.5
+	if | 6 - 10 | == 6, then y will be 0.4
+	if | 6 - 10 | == 7, then y will be 0.3
+	if | 6 - 10 | == 8, then y will be 0.2
+	if | 6 - 10 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.6
+w = 0.060606060606061
+s * w^1 = 0.036363636363636
+
+
+10. attribute: Project Novelty
+	if | 2 - 3 | == 0, then y will be 1
+	if | 2 - 3 | == 1, then y will be 0.5
+	if | 2 - 3 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+11. attribute: System Architecture
+	if | 2 - 4 | == 0, then y will be 1
+	if | 2 - 4 | == 1, then y will be 0.75
+	if | 2 - 4 | == 2, then y will be 0.5
+	if | 2 - 4 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+12. attribute: System Architecture
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 3 | == 0, then y will be 1
+	if | 3 - 3 | == 1, then y will be 0.75
+	if | 3 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-50) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-50)*(2/5)) will be operated
+f(52.6315789473684 - 73.3333333333333) = f(-39) = s = 0.00050045143344061
+w = 0.090909090909091
+s * w^1 = 4.5495584858237E-5
+
+
+16. attribute: Test Kind
+	if | 4 - 2 | == 0, then y will be 1
+	if | 4 - 2 | == 1, then y will be 0.75
+	if | 4 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.060606060606061
+s * w^1 = 0.03030303030303
+
+
+sum: 0.4163459355463
+sum^1: 0.4163459355463
+30. Case
+============
+Case Description:
+30
+1. attribute: Project Leader Experience
+	if f(19-19) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(19 - 19) = f(0) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+2. attribute: Project Leader Similar Projects
+	if f(15-9) is in the interval of [10,-10], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(15 - 9) = f(6) = s =1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+3. attribute: Project Leader Success Rate
+	if f(52.6315789473684-26.3157894736842) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(19-19)*(2/5)) will be operated
+f(52.6315789473684 - 26.3157894736842) = f(26.315789473684) = s =0.079953042173645
+w = 0.090909090909091
+s * w^1 = 0.0072684583794223
+
+
+4. attribute: Project Leader Team Familarity
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.5
+	if | 2 - 1 | == 2, then y will be 0
+
+
+	used similarity measure: similarity table
+		   1	   2	   3
+	1	|1 - 1|	|1 - 2|	|1 - 3|
+	2	|2 - 1|	|2 - 2|	|2 - 3|
+	3	|3 - 1|	|3 - 2|	|3 - 3|
+
+
+s = 0.5
+w = 0.090909090909091
+s * w^1 = 0.045454545454545
+
+
+5. attribute: Customer ID
+	if 4 == 6, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.060606060606061
+s * w^1 = 0
+
+
+6. attribute: Development Process
+	if 2 == 2, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.03030303030303
+s * w^1 = 0.03030303030303
+
+
+7. attribute: Internal Flag
+	if 0 == 0, then y will be 1
+	otherwise y will be 0
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+8. attribute: Priority
+	if | 1 - 2 | == 0, then y will be 1
+	if | 1 - 2 | == 1, then y will be 0.75
+	if | 1 - 2 | == 2, then y will be 0.5
+	if | 1 - 2 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+9. attribute: Project
+	if | 6 - 3 | == 0, then y will be 1
+	if | 6 - 3 | == 1, then y will be 0.9
+	if | 6 - 3 | == 2, then y will be 0.8
+	if | 6 - 3 | == 3, then y will be 0.7
+	if | 6 - 3 | == 4, then y will be 0.6
+	if | 6 - 3 | == 5, then y will be 0.5
+	if | 6 - 3 | == 6, then y will be 0.4
+	if | 6 - 3 | == 7, then y will be 0.3
+	if | 6 - 3 | == 8, then y will be 0.2
+	if | 6 - 3 | == 9, then y will be 0.1
+	used similarity measure: similarity table
+s = 0.7
+w = 0.060606060606061
+s * w^1 = 0.042424242424242
+
+
+10. attribute: Project Novelty
+	if | 2 - 2 | == 0, then y will be 1
+	if | 2 - 2 | == 1, then y will be 0.5
+	if | 2 - 2 | == 2, then y will be 0
+	used similarity measure: similarity table
+s = 1
+w = 0.060606060606061
+s * w^1 = 0.060606060606061
+
+
+11. attribute: System Architecture
+	if | 2 - 1 | == 0, then y will be 1
+	if | 2 - 1 | == 1, then y will be 0.75
+	if | 2 - 1 | == 2, then y will be 0.5
+	if | 2 - 1 | == 3, then y will be 0
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+12. attribute: System Architecture
+	if | 3 - 2 | == 0, then y will be 1
+	if | 3 - 2 | == 1, then y will be 0.75
+	if | 3 - 2 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.03030303030303
+s * w^1 = 0.022727272727273
+
+
+13. attribute: System Dependency
+	if 1 == 1, then y will be 1
+	otherwise y will be 0
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+14. attribute: System Operating Mode
+	if | 3 - 1 | == 0, then y will be 1
+	if | 3 - 1 | == 1, then y will be 0.75
+	if | 3 - 1 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.5
+w = 0.03030303030303
+s * w^1 = 0.015151515151515
+
+
+15. attribute: System Special Reliability
+	if 0 == 1, then y will be 1
+s = 0
+w = 0.03030303030303
+s * w^1 = 0
+
+
+16. attribute: Team Experience
+	if f(11-19) is in the interval of [20,-20], then y will be 1
+	otherwise e^(f(11-19)*(2/5)) will be operated
+f(52.6315789473684 - 26.3157894736842) = f(-8) = s = 1
+w = 0.090909090909091
+s * w^1 = 0.090909090909091
+
+
+16. attribute: Test Kind
+	if | 4 - 3 | == 0, then y will be 1
+	if | 4 - 3 | == 1, then y will be 0.75
+	if | 4 - 3 | == 2, then y will be 0.5
+	used similarity measure: similarity table
+s = 0.75
+w = 0.060606060606061
+s * w^1 = 0.045454545454545
+
+
+sum: 0.67090482201579
+sum^1: 0.67090482201579
+Array
+(
+    [1] => 0.38182736727991
+    [2] => 0.58030386666509
+    [3] => 0.40181731211469
+    [4] => 0.61421521164554
+    [5] => 0.46666705638372
+    [6] => 0.51363796402628
+    [7] => 0.52047077493454
+    [8] => 0.55151855544237
+    [9] => 0.42923819320459
+    [10] => 0.56363636363636
+    [11] => 0.50606068473548
+    [12] => 0.42350792377154
+    [13] => 0.50423815534916
+    [14] => 0.40152280179241
+    [15] => 0.69393939402359
+    [16] => 0.60687791758191
+    [17] => 0.507575757709
+    [18] => 1
+    [19] => 0.55454545454545
+    [20] => 0.42752782679007
+    [21] => 0.63287106171322
+    [22] => 0.5943037902677
+    [23] => 0.36275239366183
+    [24] => 0.61666826706728
+    [25] => 0.57121397571243
+    [26] => 0.52889035494083
+    [27] => 0.26682022419624
+    [28] => 0.46370341630373
+    [29] => 0.4163459355463
+    [30] => 0.67090482201579
+)
