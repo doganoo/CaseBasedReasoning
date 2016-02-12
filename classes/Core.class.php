@@ -15,7 +15,6 @@ class Core {
 	private $sopSimArray = array ();
 	private $tkSimArray = array ();
 	function __construct($cazeArray, $query) {
-		//TODO min und max fuer jedes Attribut definieren
 		if (is_array ( $cazeArray )) {
 			foreach ( $cazeArray as $singleCaze ) {
 				if (! is_a ( $singleCaze, "Caze" )) {
@@ -174,28 +173,6 @@ class Core {
 			$s = $this->pltfSimArray ['q' . $pltfQuery . 'c' . $pltfCaze];
 			$this->print_message ( TAB . "q = " . $pltfQuery );
 			$this->print_message ( TAB . "c = " . $pltfCaze );
-			
-			// 			$x = abs ( $pltfQuery - $pltfCaze );
-			// 			$s = - 1;
-			// 			$this->print_message ( TAB . "if | " . $pltfQuery . " - " . $pltfCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $pltfQuery . " - " . $pltfCaze . " | == 1, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "if | " . $pltfQuery . " - " . $pltfCaze . " | == 2, then y will be 0" );
-			// 			$this->print_message ( EOL );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			// 			$this->print_message ( TAB . TAB . "   1" . TAB . "   2" . TAB . "   3" );
-			// 			$this->print_message ( TAB . "1" . TAB . "|1 - 1|" . TAB . "|1 - 2|" . TAB . "|1 - 3|" );
-			// 			$this->print_message ( TAB . "2" . TAB . "|2 - 1|" . TAB . "|2 - 2|" . TAB . "|2 - 3|" );
-			// 			$this->print_message ( TAB . "3" . TAB . "|3 - 1|" . TAB . "|3 - 2|" . TAB . "|3 - 3|" );
-			// 			$this->print_message ( EOL );
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 2) {
-			// 				$s = 0;
-			// 			}
-			$this->print_message ( TAB . "q = " . $pltfQuery );
-			$this->print_message ( TAB . "c = " . $pltfCaze );
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pltfSimArray ['q' . $i . 'c' . $j] );
@@ -277,23 +254,6 @@ class Core {
 			$s = $this->prioSimArray ['q' . $pQuery . 'c' . $pCaze];
 			$this->print_message ( TAB . "q = " . $pQuery );
 			$this->print_message ( TAB . "c = " . $pCaze );
-			
-			// 			$x = abs ( $pQuery - $pCaze );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 1, then y will be 0.75" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 2, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 3, then y will be 0" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.75;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 3) {
-			// 				$s = 0;
-			// 			}
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->prioSimArray ['q' . $i . 'c' . $j] );
@@ -325,40 +285,6 @@ class Core {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->projectSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			// 			$x = abs ( $pQuery - $pCaze );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 1, then y will be 0.9" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 2, then y will be 0.8" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 3, then y will be 0.7" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 4, then y will be 0.6" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 5, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 6, then y will be 0.4" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 7, then y will be 0.3" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 8, then y will be 0.2" );
-			// 			$this->print_message ( TAB . "if | " . $pQuery . " - " . $pCaze . " | == 9, then y will be 0.1" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.9;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.8;
-			// 			} else if ($x == 3) {
-			// 				$s = 0.7;
-			// 			} else if ($x == 4) {
-			// 				$s = 0.6;
-			// 			} else if ($x == 5) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 6) {
-			// 				$s = 0.4;
-			// 			} else if ($x == 7) {
-			// 				$s = 0.3;
-			// 			} else if ($x == 8) {
-			// 				$s = 0.2;
-			// 			} else if ($x == 9) {
-			// 				$s = 0.1;
-			// 			}
 			$res = $weight * (pow ( $s, $this->alpha ));
 			$sum = $sum + $res;
 			$this->print_message ( "s = " . $s );
@@ -382,21 +308,6 @@ class Core {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pnSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			// 			$x = abs ( $pnQuery - $pnCaze );
-			// 			$this->print_message ( TAB . "if | " . $pnQuery . " - " . $pnCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $pnQuery . " - " . $pnCaze . " | == 1, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "if | " . $pnQuery . " - " . $pnCaze . " | == 2, then y will be 0" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			
-
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 2) {
-			// 				$s = 0;
-			// 			}
 			$res = $weight * (pow ( $s, $this->alpha ));
 			$sum = $sum + $res;
 			$this->print_message ( "s = " . $s );
@@ -421,23 +332,6 @@ class Core {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->saSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			// 			$this->print_message ( TAB . "if | " . $saQuery . " - " . $saCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $saQuery . " - " . $saCaze . " | == 1, then y will be 0.75" );
-			// 			$this->print_message ( TAB . "if | " . $saQuery . " - " . $saCaze . " | == 2, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "if | " . $saQuery . " - " . $saCaze . " | == 3, then y will be 0" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			
-
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.75;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 3) {
-			// 				$s = 0;
-			// 			}
 			$res = $weight * (pow ( $s, $this->alpha ));
 			$sum = $sum + $res;
 			$this->print_message ( "s = " . $s );
@@ -461,21 +355,6 @@ class Core {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->scSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			// 			$x = abs ( $scQuery - $scCaze );
-			// 			$this->print_message ( TAB . "if | " . $scQuery . " - " . $scCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $scQuery . " - " . $scCaze . " | == 1, then y will be 0.75" );
-			// 			$this->print_message ( TAB . "if | " . $scQuery . " - " . $scCaze . " | == 2, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			
-
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.75;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.5;
-			// 			}
 			$res = $weight * (pow ( $s, $this->alpha ));
 			$sum = $sum + $res;
 			$this->print_message ( "s = " . $s );
@@ -519,19 +398,6 @@ class Core {
 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->sopSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			// 			$x = abs ( $sopQuery - $sopCaze );
-			// 			$this->print_message ( TAB . "if | " . $sopQuery . " - " . $sopCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $sopQuery . " - " . $sopCaze . " | == 1, then y will be 0.75" );
-			// 			$this->print_message ( TAB . "if | " . $sopQuery . " - " . $sopCaze . " | == 2, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.75;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.5;
-			// 			}
 			$res = $weight * (pow ( $s, $this->alpha ));
 			$sum = $sum + $res;
 			$this->print_message ( "s = " . $s );
@@ -592,40 +458,30 @@ class Core {
 			$this->print_message ( "17. attribute: Test Kind" );
 			$tkCaze = $caze->testKind;
 			$tkQuery = $this->query->testKind;
-			$weight = $caze->w_testKind;
-			$res = - 1;
 			$s = $this->tkSimArray ['q' . $tkQuery . 'c' . $tkCaze];
-			$this->print_message ( TAB . "q = " . $tkQuery );
-			$this->print_message ( TAB . "c = " . $tkCaze );
-			
-			for($i = 1; $i <= 3; $i ++) {
-				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->tkSimArray ['q' . $i . 'c' . $j] );
-				}
-			}
-			// 			$x = abs ( $tkQuery - $tkCaze );
-			// 			$this->print_message ( TAB . "if | " . $tkQuery . " - " . $tkCaze . " | == 0, then y will be 1" );
-			// 			$this->print_message ( TAB . "if | " . $tkQuery . " - " . $tkCaze . " | == 1, then y will be 0.75" );
-			// 			$this->print_message ( TAB . "if | " . $tkQuery . " - " . $tkCaze . " | == 2, then y will be 0.5" );
-			// 			$this->print_message ( TAB . "used similarity measure: similarity table" );
+			$res = $this->buildSingleSim ( $tkQuery, $tkCaze, $caze->w_testKind, $s );
+			$sum = $sum + $res;
+			// 			$tkCaze = $caze->testKind;
+			// 			$tkQuery = $this->query->testKind;
+			// 			$s = $this->tkSimArray ['q' . $tkQuery . 'c' . $tkCaze];
+			// 			$this->print_message ( "17. attribute: Test Kind" );
+			// 			$weight = $caze->w_testKind;
+			// 			$res = - 1;
+			// 			$this->print_message ( TAB . "q = " . $tkQuery );
+			// 			$this->print_message ( TAB . "c = " . $tkCaze );
 			
 
-			// 			$s = - 1;
-			// 			if ($x == 0) {
-			// 				$s = 1;
-			// 			} else if ($x == 1) {
-			// 				$s = 0.75;
-			// 			} else if ($x == 2) {
-			// 				$s = 0.5;
-			// 			} else if ($x == 3) {
-			// 				$s = 0;
+			// 			for($i = 1; $i <= 3; $i ++) {
+			// 				for($j = 1; $j <= 3; $j ++) {
+			// 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->tkSimArray ['q' . $i . 'c' . $j] );
+			// 				}
 			// 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
-			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
+			// 			$res = $weight * (pow ( $s, $this->alpha ));
+			// 			$sum = $sum + $res;
+			// 			$this->print_message ( "s = " . $s );
+			// 			$this->print_message ( "w = " . $weight );
+			// 			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
+			// 			$this->print_message ( EOL );
 			$this->print_message ( "sum: " . $sum );
 			$sim = pow ( $sum, 1 / $this->alpha );
 			$this->print_message ( "sum^" . $this->alpha . ": " . $sim );
@@ -633,6 +489,17 @@ class Core {
 			$i ++;
 		}
 		print_r ( $this->simArray );
+	}
+	private function buildSingleSim($q, $c, $w, $s) {
+		$res = - 1;
+		$this->print_message ( TAB . "q = " . $q );
+		$this->print_message ( TAB . "c = " . $c );
+		$res = $w * (pow ( $s, $this->alpha ));
+		$this->print_message ( "s = " . $s );
+		$this->print_message ( "w = " . $w );
+		$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
+		$this->print_message ( EOL );
+		return $res;
 	}
 	private function threshold($x) {
 		if ($x < 0) {
