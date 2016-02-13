@@ -5,7 +5,6 @@ class Core {
 	private $query = null;
 	private $alpha = 1;
 	private $simArray = array ();
-	private static $SHOW_DETAILS = true;
 	private $pltfSimArray = array ();
 	private $prioSimArray = array ();
 	private $projectSimArray = array ();
@@ -32,7 +31,7 @@ class Core {
 		$this->pltfSimArray = $this->generateSimilarityArray ( 3 );
 		
 		//8. Priority Similarity Array
-		$this->prioSimArray = $this->generateSimilarityArray ( 3 );
+		$this->prioSimArray = $this->generateSimilarityArray ( 4 );
 		
 		//9. Project Similarity Array
 		$this->projectSimArray = $this->generateSimilarityArray ( 10 );
@@ -41,7 +40,7 @@ class Core {
 		$this->pnSimArray = $this->generateSimilarityArray ( 3 );
 		
 		//11. SA Similarity Array
-		$this->saSimArray = $this->generateSimilarityArray ( 3 );
+		$this->saSimArray = $this->generateSimilarityArray ( 4 );
 		
 		//12. SC Similarity Array
 		$this->scSimArray = $this->generateSimilarityArray ( 3 );
@@ -50,7 +49,7 @@ class Core {
 		$this->sopSimArray = $this->generateSimilarityArray ( 3 );
 		
 		//17. TK Similarity Array
-		$this->tkSimArray = $this->generateSimilarityArray ( 3 );
+		$this->tkSimArray = $this->generateSimilarityArray ( 4 );
 	}
 	private function generateSimilarityArray($number) {
 		$simArray = array ();
@@ -63,442 +62,254 @@ class Core {
 	}
 	public function getSimilarity() {
 		$i = 1;
-		$this->print_message ( "Query Description:" );
-		$this->print_message ( $this->query );
+		Util::printMessage ( "Query Description:" );
+		Util::printMessage ( $this->query );
 		foreach ( $this->cazeArray as $caze ) {
 			$sum = 0;
-			$this->print_message ( $i . ". Case" );
-			$this->print_message ( "============" );
-			$this->print_message ( "Case Description:" );
-			$this->print_message ( $caze );
+			Util::printMessage ( $i . ". Case" );
+			Util::printMessage ( "============" );
+			Util::printMessage ( "Case Description:" );
+			Util::printMessage ( $caze );
 			
 			//1. Project Leader
-			$this->print_message ( "1. attribute: Project Leader Experience" );
-			$pleCaze = $caze->projectLeaderExperience;
-			$pleQuery = $this->query->projectLeaderExperience;
-			$weight = $caze->w_projectLeaderExperience;
-			$res = - 1;
-			$x = $pleQuery - $pleCaze;
-			$s = - 1;
-			//TODO richtigen Namen fuer threshold
-			$threshold = 20;
-			$this->print_message ( TAB . "if f(" . $pleQuery . "-" . $pleCaze . ") is in the interval of [" . $threshold . "," . ($threshold * - 1) . "], then y will be 1" );
-			$this->print_message ( TAB . "otherwise e^(f(" . $pleQuery . "-" . $pleCaze . ")*(2/5)) will be operated" );
-			//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
-			//bei dem gilt: f(x) = 1
-			if ($x <= $threshold && $x >= ($threshold * - 1)) {
-				$s = 1;
-			} else {
-				//ansonsten nehme eine exponentiale Funktion: e^((x+5) * 2/5) bzw. e^((-x+5) * 2/5)
-				if ($x > 0) {
-					$s = $this->exponential ( (- 1 * $x) + $threshold, 2 / 5 );
-				} else if ($x < 0) {
-					$s = $this->exponential ( $x + $threshold, 2 / 5 );
-				}
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "1. attribute: Project Leader Experience" );
+			$c = $caze->projectLeaderExperience;
+			$q = $this->query->projectLeaderExperience;
+			$w = $caze->w_projectLeaderExperience;
+			$s = $this->buildExponentialSim ( $q, $c, 20 );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "f(" . $pleQuery . " - " . $pleCaze . ") = f(" . $x . ") = s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//2. Project Leader Similar Projects
-			$this->print_message ( "2. attribute: Project Leader Similar Projects" );
-			$plspCaze = $caze->projectLeaderSimilarProjects;
-			$plspQuery = $this->query->projectLeaderSimilarProjects;
-			$x = $plspQuery - $plspCaze;
-			$weight = $caze->w_projectLeaderSimilarProjects;
-			$res = - 1;
-			$s = - 1;
-			$threshold = 10;
-			$this->print_message ( TAB . "if f(" . $plspQuery . "-" . $plspCaze . ") is in the interval of [" . $threshold . ", " . ($threshold * - 1) . "], then y will be 1" );
-			$this->print_message ( TAB . "otherwise e^(f(" . $pleQuery . "-" . $pleCaze . ")*(2/5)) will be operated" );
-			//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
-			//bei dem gilt: f(x) = 1
-			if ($x <= $threshold && $x >= ($threshold * - 1)) {
-				$s = 1;
-			} else {
-				//ansonsten nehme eine exponentiale Funktion: e^((x+threshold) * 2/5) bzw. e^((-x+threshold) * 2/5)
-				if ($x > 0) {
-					$s = $this->exponential ( (- 1 * $x) + $threshold, 2 / 5 );
-				} else if ($x < 0) {
-					$s = $this->exponential ( $x + $threshold, 2 / 5 );
-				}
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "2. attribute: Project Leader Similar Projects" );
+			$c = $caze->projectLeaderSimilarProjects;
+			$q = $this->query->projectLeaderSimilarProjects;
+			$w = $caze->w_projectLeaderSimilarProjects;
+			$s = $this->buildExponentialSim ( $q, $c, 10 );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "f(" . $plspQuery . " - " . $plspCaze . ") = f(" . $x . ") = s =" . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//3. Project Leader Success Rate
-			$this->print_message ( "3. attribute: Project Leader Success Rate" );
-			$plsrCaze = $caze->projectLeaderSuccessRate;
-			$plsrQuery = $this->query->projectLeaderSuccessRate;
-			$weight = $caze->w_projectLeaderSuccessRate;
-			$res = - 1;
-			$x = $plsrQuery - $plsrCaze;
-			$s = - 1;
-			$threshold = 20;
-			$this->print_message ( TAB . "if f(" . $plsrQuery . "-" . $plsrCaze . ") is in the interval of [" . $threshold . ", " . ($threshold * - 1) . "], then y will be 1" );
-			$this->print_message ( TAB . "otherwise e^(f(" . $pleQuery . "-" . $pleCaze . ")*(2/5)) will be operated" );
-			//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
-			//bei dem gilt: f(x) = 1
-			if ($x <= $threshold && $x >= ($threshold * - 1)) {
-				$s = 1;
-			} else {
-				//ansonsten nehme eine exponentiale Funktion: e^((x+threshold) * 2/5) bzw. e^((-x+5) * 2/5)
-				if ($x > 0) {
-					$s = $this->exponential ( (- 1 * $x) + $threshold, 2 / 5 );
-				} else if ($x < 0) {
-					$s = $this->exponential ( $x + $threshold, 2 / 5 );
-				}
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "3. attribute: Project Leader Success Rate" );
+			$c = $caze->projectLeaderSuccessRate;
+			$q = $this->query->projectLeaderSuccessRate;
+			$w = $caze->w_projectLeaderSuccessRate;
+			$s = $this->buildExponentialSim ( $q, $c, 20 );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "f(" . $plsrQuery . " - " . $plsrCaze . ") = f(" . $x . ") = s =" . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//4. Project Leader Team Familarity
-			$this->print_message ( "4. attribute: Project Leader Team Familarity" );
-			$pltfCaze = $caze->projectLeaderTeamFamilarity;
-			$pltfQuery = $this->query->projectLeaderTeamFamilarity;
-			$weight = $caze->w_projectLeaderTeamFamilarity;
-			$res = - 1;
-			$s = - 1;
-			$s = $this->pltfSimArray ['q' . $pltfQuery . 'c' . $pltfCaze];
-			$this->print_message ( TAB . "q = " . $pltfQuery );
-			$this->print_message ( TAB . "c = " . $pltfCaze );
+			Util::printMessage ( "4. attribute: Project Leader Team Familarity" );
+			$c = $caze->projectLeaderTeamFamilarity;
+			$q = $this->query->projectLeaderTeamFamilarity;
+			$w = $caze->w_projectLeaderTeamFamilarity;
+			$s = $this->pltfSimArray ['q' . $q . 'c' . $c];
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pltfSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pltfSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$this->print_message ( EOL );
-			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//5. Customer ID
-			$this->print_message ( "5. attribute: Customer ID" );
-			$cidCaze = $caze->customerId;
-			$cidQuery = $this->query->customerId;
-			$weight = $caze->w_customerId;
-			$this->print_message ( TAB . "if " . $cidQuery . " == " . $cidCaze . ", then y will be 1" );
-			$this->print_message ( TAB . "otherwise y will be 0" );
-			$s = 0;
-			if ($cidCaze == $cidQuery) {
-				$s = 1;
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "5. attribute: Customer ID" );
+			$c = $caze->customerId;
+			$q = $this->query->customerId;
+			$w = $caze->w_customerId;
+			$s = $this->buildBinarySim ( $q, $c );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//6. Development Process
-			$this->print_message ( "6. attribute: Development Process" );
-			$dpCaze = $caze->developmentProcess;
-			$dpQuery = $this->query->developmentProcess;
-			$weight = $caze->w_developmentProcess;
-			$res = - 1;
-			$this->print_message ( TAB . "if " . $dpQuery . " == " . $dpCaze . ", then y will be 1" );
-			$this->print_message ( TAB . "otherwise y will be 0" );
-			$s = 0;
-			if ($dpCaze == $dpQuery) {
-				$s = 1;
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "6. attribute: Development Process" );
+			$c = $caze->developmentProcess;
+			$q = $this->query->developmentProcess;
+			$w = $caze->w_developmentProcess;
+			$s = $this->buildBinarySim ( $q, $c );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//7. Internal Flag
-			$this->print_message ( "7. attribute: Internal Flag" );
-			$ifCaze = $caze->internalFlag;
-			$ifQuery = $this->query->internalFlag;
-			$weight = $caze->w_internalFlag;
-			$res = - 1;
-			$this->print_message ( TAB . "if " . $ifQuery . " == " . $ifCaze . ", then y will be 1" );
-			$this->print_message ( TAB . "otherwise y will be 0" );
-			$s = 0;
-			if ($ifCaze == $ifQuery) {
-				$s = 1;
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "7. attribute: Internal Flag" );
+			$c = $caze->internalFlag;
+			$q = $this->query->internalFlag;
+			$w = $caze->w_internalFlag;
+			$s = $this->buildBinarySim ( $q, $c );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//8. Priority
-			$this->print_message ( "8. attribute: Priority" );
-			$pCaze = $caze->priority;
-			$pQuery = $this->query->priority;
-			$weight = $caze->w_priority;
-			$res = - 1;
-			$s = - 1;
-			$s = $this->prioSimArray ['q' . $pQuery . 'c' . $pCaze];
-			$this->print_message ( TAB . "q = " . $pQuery );
-			$this->print_message ( TAB . "c = " . $pCaze );
+			Util::printMessage ( "8. attribute: Priority" );
+			$c = $caze->priority;
+			$q = $this->query->priority;
+			$w = $caze->w_priority;
+			$s = $this->prioSimArray ['q' . $q . 'c' . $c];
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->prioSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->prioSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$this->print_message ( EOL );
-			$this->print_message ( TAB . "used similarity measure: similarity table" );
-			
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//9. Project
-			$this->print_message ( "9. attribute: Project" );
-			$pCaze = $caze->project;
-			$pQuery = $this->query->project;
-			$weight = $caze->w_project;
-			$res = - 1;
-			$s = - 1;
-			$s = $this->projectSimArray ['q' . $pQuery . 'c' . $pCaze];
-			$this->print_message ( TAB . "q = " . $pQuery );
-			$this->print_message ( TAB . "c = " . $pCaze );
-			
+			Util::printMessage ( "9. attribute: Project" );
+			$c = $caze->project;
+			$q = $this->query->project;
+			$w = $caze->w_project;
+			$s = $this->projectSimArray ['q' . $q . 'c' . $c];
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->projectSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->projectSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//10. Project Novelty
-			$this->print_message ( "10. attribute: Project Novelty" );
-			$pnCaze = $caze->projectNovelty;
-			$pnQuery = $this->query->projectNovelty;
-			$weight = $caze->w_projectNovelty;
-			$res = - 1;
-			$s = - 1;
-			$s = $this->pnSimArray ['q' . $pnQuery . 'c' . $pnCaze];
-			$this->print_message ( TAB . "q = " . $pnQuery );
-			$this->print_message ( TAB . "c = " . $pnCaze );
+			Util::printMessage ( "10. attribute: Project Novelty" );
+			$c = $caze->projectNovelty;
+			$q = $this->query->projectNovelty;
+			$w = $caze->w_projectNovelty;
+			$s = $this->pnSimArray ['q' . $q . 'c' . $c];
 			
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pnSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->pnSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//11. System Architecture
-			$this->print_message ( "11. attribute: System Architecture" );
-			$saCaze = $caze->systemArchitecture;
-			$saQuery = $this->query->systemArchitecture;
-			$x = abs ( $saQuery - $saCaze );
-			$weight = $caze->w_systemArchitecture;
-			$res = - 1;
-			$s = - 1;
-			$this->print_message ( TAB . "q = " . $saQuery );
-			$this->print_message ( TAB . "c = " . $saCaze );
-			$s = $this->saSimArray ['q' . $saQuery . 'c' . $saCaze];
-			
+			Util::printMessage ( "11. attribute: System Architecture" );
+			$c = $caze->systemArchitecture;
+			$q = $this->query->systemArchitecture;
+			$w = $caze->w_systemArchitecture;
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->saSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->saSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$s = $this->saSimArray ['q' . $q . 'c' . $c];
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//12. System Criticality
-			$this->print_message ( "12. attribute: System Criticality" );
-			$scCaze = $caze->systemCriticality;
-			$scQuery = $this->query->systemCriticality;
-			$weight = $caze->w_systemCriticality;
-			$res = - 1;
-			$s = - 1;
-			$this->print_message ( TAB . "q = " . $scQuery );
-			$this->print_message ( TAB . "c = " . $scCaze );
-			$s = $this->scSimArray ['q' . $scQuery . 'c' . $scCaze];
-			
+			Util::printMessage ( "12. attribute: System Criticality" );
+			$c = $caze->systemCriticality;
+			$q = $this->query->systemCriticality;
+			$w = $caze->w_systemCriticality;
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->scSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->scSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$s = $this->scSimArray ['q' . $q . 'c' . $c];
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//13. System Dependency
-			$this->print_message ( "13. attribute: System Dependency" );
-			$sdCaze = $caze->systemDependency;
-			$sdQuery = $this->query->systemDependency;
-			$weight = $caze->w_systemDependency;
-			$res = - 1;
-			$this->print_message ( TAB . "if " . $sdQuery . " == " . $sdCaze . ", then y will be 1" );
-			$this->print_message ( TAB . "otherwise y will be 0" );
-			
-			$s = 0;
-			if ($plspCaze == $plspQuery) {
-				$s = 1;
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "13. attribute: System Dependency" );
+			$c = $caze->systemDependency;
+			$q = $this->query->systemDependency;
+			$w = $caze->w_systemDependency;
+			$s = $this->buildBinarySim ( $q, $c );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//14. System Operating Mode
-			$this->print_message ( "14. attribute: System Operating Mode" );
-			$sopCaze = $caze->systemOperatingMode;
-			$sopQuery = $this->query->systemOperatingMode;
-			$weight = $caze->w_systemOperatingMode;
-			$res = - 1;
-			$s = - 1;
-			$s = $this->sopSimArray ['q' . $sopQuery . 'c' . $sopCaze];
-			$this->print_message ( TAB . "q = " . $sopQuery );
-			$this->print_message ( TAB . "c = " . $sopCaze );
-			
+			Util::printMessage ( "14. attribute: System Operating Mode" );
+			$c = $caze->systemOperatingMode;
+			$q = $this->query->systemOperatingMode;
+			$w = $caze->w_systemOperatingMode;
+			$s = $this->sopSimArray ['q' . $q . 'c' . $c];
 			for($i = 1; $i <= 3; $i ++) {
 				for($j = 1; $j <= 3; $j ++) {
-					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->sopSimArray ['q' . $i . 'c' . $j] );
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->sopSimArray ['q' . $i . 'c' . $j] );
 				}
 			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//15. System Special Reliability
-			$this->print_message ( "15. attribute: System Special Reliability" );
-			$sspCaze = $caze->systemSpecialReliability;
-			$sspQuery = $this->query->systemSpecialReliability;
-			$weight = $caze->w_systemSpecialReliability;
-			$res = - 1;
-			$this->print_message ( TAB . "if " . $sspQuery . " == " . $sspCaze . ", then y will be 1" );
-			$s = 0;
-			if ($sspCaze == $sspQuery) {
-				$s = 1;
-			}
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "15. attribute: System Special Reliability" );
+			$c = $caze->systemSpecialReliability;
+			$q = $this->query->systemSpecialReliability;
+			$w = $caze->w_systemSpecialReliability;
+			$s = $this->buildBinarySim ( $q, $c );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//16. Team Experience
-			$this->print_message ( "16. attribute: Team Experience" );
-			$teCaze = $caze->teamExperience;
-			$teQuery = $this->query->teamExperience;
-			$weight = $caze->w_teamExperience;
-			$res = - 1;
-			$x = $teQuery - $teCaze;
-			$s = - 1;
-			$threshold = 20;
-			$this->print_message ( TAB . "if f(" . $teQuery . "-" . $teCaze . ") is in the interval of [" . $threshold . ", " . ($threshold * - 1) . "], then y will be 1" );
-			$this->print_message ( TAB . "otherwise e^(f(" . $teQuery . "-" . $teCaze . ")*(2/5)) will be operated" );
-			//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
-			//bei dem gilt: f(x) = 1
-			if ($x <= $threshold && $x >= ($threshold * - 1)) {
-				$s = 1;
-			} else {
-				//ansonsten nehme eine exponentiale Funktion: e^((x+5) * 2/5) bzw. e^((-x+5) * 2/5)
-				if ($x > 0) {
-					$s = $this->exponential ( (- 1 * $x) + $threshold, 2 / 5 );
-				} else if ($x < 0) {
-					$s = $this->exponential ( $x + $threshold, 2 / 5 );
-				}
-			}
-			$this->print_message ( "s = " . $s );
-			$res = $weight * (pow ( $s, $this->alpha ));
+			Util::printMessage ( "16. attribute: Team Experience" );
+			$c = $caze->teamExperience;
+			$q = $this->query->teamExperience;
+			$w = $caze->w_teamExperience;
+			$s = $this->buildExponentialSim ( $q, $c, 20 );
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			$this->print_message ( "f(" . $plsrQuery . " - " . $plsrCaze . ") = f(" . $x . ") = s = " . $s );
-			$this->print_message ( "w = " . $weight );
-			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			$this->print_message ( EOL );
 			
 			//17. Test Kind
-			$this->print_message ( "17. attribute: Test Kind" );
-			$tkCaze = $caze->testKind;
-			$tkQuery = $this->query->testKind;
-			$s = $this->tkSimArray ['q' . $tkQuery . 'c' . $tkCaze];
-			$res = $this->buildSingleSim ( $tkQuery, $tkCaze, $caze->w_testKind, $s );
+			Util::printMessage ( "17. attribute: Test Kind" );
+			$c = $caze->testKind;
+			$q = $this->query->testKind;
+			$s = $this->tkSimArray ['q' . $q . 'c' . $c];
+			for($i = 1; $i <= 3; $i ++) {
+				for($j = 1; $j <= 3; $j ++) {
+					Util::printMessage ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->tkSimArray ['q' . $i . 'c' . $j] );
+				}
+			}
+			$w = $caze->w_testKind;
+			$res = $this->weightSimiliarity ( $q, $c, $w, $s );
 			$sum = $sum + $res;
-			// 			$tkCaze = $caze->testKind;
-			// 			$tkQuery = $this->query->testKind;
-			// 			$s = $this->tkSimArray ['q' . $tkQuery . 'c' . $tkCaze];
-			// 			$this->print_message ( "17. attribute: Test Kind" );
-			// 			$weight = $caze->w_testKind;
-			// 			$res = - 1;
-			// 			$this->print_message ( TAB . "q = " . $tkQuery );
-			// 			$this->print_message ( TAB . "c = " . $tkCaze );
 			
-
-			// 			for($i = 1; $i <= 3; $i ++) {
-			// 				for($j = 1; $j <= 3; $j ++) {
-			// 					$this->print_message ( TAB . "if q == " . $i . ",  c == " . $j . ", then y will be " . $this->tkSimArray ['q' . $i . 'c' . $j] );
-			// 				}
-			// 			}
-			// 			$res = $weight * (pow ( $s, $this->alpha ));
-			// 			$sum = $sum + $res;
-			// 			$this->print_message ( "s = " . $s );
-			// 			$this->print_message ( "w = " . $weight );
-			// 			$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-			// 			$this->print_message ( EOL );
-			$this->print_message ( "sum: " . $sum );
+			//Ende
+			Util::printMessage ( "sum: " . $sum );
 			$sim = pow ( $sum, 1 / $this->alpha );
-			$this->print_message ( "sum^" . $this->alpha . ": " . $sim );
+			Util::printMessage ( "sum^" . $this->alpha . ": " . $sim );
 			$this->simArray [$caze->caseId] = $sim;
 			$i ++;
 		}
-		print_r ( $this->simArray );
+		return $this->simArray;
 	}
-	private function buildSingleSim($q, $c, $w, $s) {
+	private function buildBinarySim($q, $c) {
+		Util::printMessage ( TAB . "if " . $q . " == " . $c . ", then y will be 1" );
+		if ($q == $c) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+	private function buildExponentialSim($q, $c, $t, $a = 0.4) {
+		$x = $q - $c;
+		$s = - 1;
+		Util::printMessage ( TAB . "if f(" . $q . "-" . $c . ") is in the interval of [" . $t . ", " . ($t * - 1) . "], then y will be 1" );
+		Util::printMessage ( TAB . "otherwise e^(f(" . $q . "-" . $c . ")*" . $a . ") will be operated" );
+		//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
+		//bei dem gilt: f(q-c) = 1
+		if ($x <= $t && $x >= ($t * - 1)) {
+			$s = 1;
+		} else {
+			//ansonsten nehme eine exponentiale Funktion: e^(((q-c)+t) * a) bzw. e^((-(q-c)+t) * a)
+			if ($x > 0) {
+				$s = $this->exponential ( (- 1 * $x) + $t, $a );
+			} else if ($x < 0) {
+				$s = $this->exponential ( $x + $t, $a );
+			}
+		}
+		return $s;
+	}
+	private function weightSimiliarity($q, $c, $w, $s) {
 		$res = - 1;
-		$this->print_message ( TAB . "q = " . $q );
-		$this->print_message ( TAB . "c = " . $c );
+		Util::printMessage ( TAB . "q = " . $q );
+		Util::printMessage ( TAB . "c = " . $c );
 		$res = $w * (pow ( $s, $this->alpha ));
-		$this->print_message ( "s = " . $s );
-		$this->print_message ( "w = " . $w );
-		$this->print_message ( "s * w^" . $this->alpha . " = " . $res );
-		$this->print_message ( EOL );
+		Util::printMessage ( "s = " . $s );
+		Util::printMessage ( "w = " . $w );
+		Util::printMessage ( "w * s" . $this->alpha . " = " . $res );
+		Util::printMessage ( EOL );
 		return $res;
 	}
 	private function threshold($x) {
@@ -538,11 +349,6 @@ class Core {
 			return false;
 		} else {
 			return true;
-		}
-	}
-	private function print_message($message) {
-		if (Core::$SHOW_DETAILS) {
-			echo $message . EOL;
 		}
 	}
 }

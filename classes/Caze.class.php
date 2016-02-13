@@ -44,12 +44,6 @@ class Caze {
 	public $w_systemSpecialReliability;
 	public $w_teamExperience;
 	public $w_testKind;
-	//alpha
-	private $alpha = 1;
-	//numberOfAttributes
-	private $numberOfAttributes = 17;
-	//show details
-	public static $showDetails = false;
 	function __construct() {
 		//GEWICHTE 3
 		$this->w_projectLeaderExperience = (3 / 33);
@@ -75,9 +69,6 @@ class Caze {
 	public function getSumOfWeights() {
 		$sum = $this->w_projectLeaderExperience + $this->w_projectLeaderSimilarProjects + $this->w_projectLeaderSuccessRate + $this->w_projectLeaderTeamFamilarity + $this->w_customerId + $this->w_developmentProcess + $this->w_internalFlag + $this->w_priority + $this->w_project + $this->w_projectNovelty + $this->w_systemArchitecture + $this->w_systemCriticality + $this->w_systemDependency + $this->w_systemOperatingMode + $this->w_systemSpecialReliability + $this->w_teamExperience + $this->w_testKind;
 		return $sum;
-	}
-	public function getNumberOfAttributes() {
-		return $this->numberOfAttributes;
 	}
 	function __toString() {
 		return $this->caseId;

@@ -1,81 +1,43 @@
 <?php
+//includes
 include 'classes/Database.class.php';
 include 'classes/Caze.class.php';
 include 'classes/Core.class.php';
+include 'classes/Util.class.php';
+
+//variables
+$db = new Database ();
+
+//constants
 define ( "EOL", "\n" );
 define ( "TAB", "\t" );
-$cazeArray = array ();
-$nearestValue = 100000000;
-$id = - 1;
-$db = new Database ();
-$showDetails = ! Caze::$showDetails;
-$cazes = $db->query ( "SELECT 
-carer_experience,
-carer_similar_projects,
-carer_success_rate,
-carer_team_familarity,
-customer_id,
-development_process,
-id,
-internal_flag,
-priority,
-project,
-project_novelty,
-reference,
-system_architecture,
-system_criticality,
-system_dependency,
-system_operating_mode,
-system_special_reliability,
-team_experience,
-test_kind,
-time, size FROM caze where id <= 30" );
 
-$sampleCase = getSampleCase ( 33 );
-while ( $row = mysqli_fetch_array ( $cazes ) ) {
-	$caze = new Caze ();
-	$caze->caseId = $row ['id'];
-	$caze->caseReference = $row ['reference'];
-	$caze->projectLeaderExperience = $row ['carer_experience'];
-	$caze->projectLeaderSimilarProjects = $row ['carer_similar_projects'];
-	$caze->projectLeaderSuccessRate = $row ['carer_success_rate'];
-	$caze->projectLeaderTeamFamilarity = $row ['carer_team_familarity'];
-	$caze->customerId = $row ['customer_id'];
-	$caze->developmentProcess = $row ['development_process'];
-	$caze->internalFlag = $row ['internal_flag'];
-	$caze->priority = $row ['priority'];
-	$caze->project = $row ['project'];
-	$caze->projectNovelty = $row ['project_novelty'];
-	$caze->systemArchitecture = $row ['system_architecture'];
-	$caze->systemCriticality = $row ['system_criticality'];
-	$caze->systemDependency = $row ['system_dependency'];
-	$caze->systemOperatingMode = $row ['system_operating_mode'];
-	$caze->systemSpecialReliability = $row ['system_special_reliability'];
-	$caze->teamExperience = $row ['team_experience'];
-	$caze->testKind = $row ['test_kind'];
-	$caze->time = $row ['time'];
-	$caze->size = $row ['size'];
-	$caze->productivity = $caze->size / $caze->time;
-	$avgProductivity = getAverageProductivity ( $caze->caseId );
-	$caze->productivityCoefficient = $caze->productivity / $avgProductivity;
-	// 	print_message ( "sim(" . $caze->caseId . "): " . $abs );
-	// 	print_message ( "PC(" . $caze->caseId . "): " . $caze->productivityCoefficient );
-	// 	print_message ( "productivity(" . $caze->caseId . "): " . $caze->productivity );
-	// 	if ($abs < $nearestValue) {
-	// 		$nearestValue = $abs;
-	// 		$id = $caze->caseId;
-	// 		$productivityCoefficient = $caze->productivityCoefficient;
-	// 	}
-	$cazeArray [] = $caze;
-}
-// print_message ( "nearest Case: " . $id );
-// print_message ( "productivity Coefficient: " . $productivityCoefficient );
-// $averageProductivity = getAverageProductivity ();
-// print_message ( "avergae Productivity: " . $averageProductivity );
-// print_message ( "Productivity Forecast: " . $averageProductivity * $productivityCoefficient );
+//load cases and sample case
+$cazeArray = getCazes ();
+$sampleCase = getSingleCaze ( 33 );
 $core = new Core ( $cazeArray, $sampleCase );
-$core->getSimilarity ();
-function getSampleCase($id) {
+$simArray = $core->getSimilarity ();
+print_r ( $simArray );
+$nearestId = Util::getNearestValue ( $simArray );
+$nCaze = getSingleCaze ( $nearestId );
+$avgCBProductivity = getAverageProductivity ();
+Util::printMezzage ( "Nearest Case: " . $nCaze->caseId );
+Util::printMezzage ( "NC Productivity: " . $nCaze->productivityCoefficient );
+Util::printMezzage ( "AVG CB Productivity: " . $avgCBProductivity );
+//close database
+$db->close ();
+
+//functions
+function getCazes($number = 30) {
+	$cazeArray = array ();
+	$c = new Caze ();
+	for($i = 1; $i <= $number; $i ++) {
+		$c = getSingleCaze ( $i );
+		$cazeArray [$i] = $c;
+	}
+	return $cazeArray;
+}
+function getSingleCaze($id) {
 	if (trim ( $id ) == "" || ! is_numeric ( $id )) {
 		return false;
 	}
@@ -83,30 +45,36 @@ function getSampleCase($id) {
 	$caze = new Caze ();
 	$query = "select * from caze where id = " . $id;
 	$result = $db->query ( $query );
-	while ( $row = mysqli_fetch_array ( $result ) ) {
-		$caze->caseId = $row ['id'];
-		$caze->caseReference = $row ['reference'];
-		$caze->projectLeaderExperience = $row ['carer_experience'];
-		$caze->projectLeaderSimilarProjects = $row ['carer_similar_projects'];
-		$caze->projectLeaderSuccessRate = $row ['carer_success_rate'];
-		$caze->projectLeaderTeamFamilarity = $row ['carer_team_familarity'];
-		$caze->customerId = $row ['customer_id'];
-		$caze->developmentProcess = $row ['development_process'];
-		$caze->internalFlag = $row ['internal_flag'];
-		$caze->priority = $row ['priority'];
-		$caze->project = $row ['project'];
-		$caze->projectNovelty = $row ['project_novelty'];
-		$caze->systemArchitecture = $row ['system_architecture'];
-		$caze->systemCriticality = $row ['system_criticality'];
-		$caze->systemDependency = $row ['system_dependency'];
-		$caze->systemOperatingMode = $row ['system_operating_mode'];
-		$caze->systemSpecialReliability = $row ['system_special_reliability'];
-		$caze->teamExperience = $row ['team_experience'];
-		$caze->teamProjectExperience = $row ['team_project_experience'];
-		$caze->testKind = $row ['test_kind'];
-		$caze->time = $row ['time'];
-		$caze->size = $row ['size'];
-		$caze->productivity = $caze->size / $caze->time;
+	while ( $array = $db->getMysqliArray ( MYSQL_ASSOC ) ) {
+		$caze->caseId = $array ['id'];
+		$caze->caseReference = $array ['reference'];
+		$caze->projectLeaderExperience = $array ['carer_experience'];
+		$caze->projectLeaderSimilarProjects = $array ['carer_similar_projects'];
+		$caze->projectLeaderSuccessRate = $array ['carer_success_rate'];
+		$caze->projectLeaderTeamFamilarity = $array ['carer_team_familarity'];
+		$caze->customerId = $array ['customer_id'];
+		$caze->developmentProcess = $array ['development_process'];
+		$caze->internalFlag = $array ['internal_flag'];
+		$caze->priority = $array ['priority'];
+		$caze->project = $array ['project'];
+		$caze->projectNovelty = $array ['project_novelty'];
+		$caze->systemArchitecture = $array ['system_architecture'];
+		$caze->systemCriticality = $array ['system_criticality'];
+		$caze->systemDependency = $array ['system_dependency'];
+		$caze->systemOperatingMode = $array ['system_operating_mode'];
+		$caze->systemSpecialReliability = $array ['system_special_reliability'];
+		$caze->teamExperience = $array ['team_experience'];
+		$caze->teamProjectExperience = $array ['team_project_experience'];
+		$caze->testKind = $array ['test_kind'];
+		$time = $array ['time'];
+		$size = $array ['size'];
+		$caze->time = $time;
+		$caze->size = $size;
+		$productivity = $size / $time;
+		$caze->productivity = $productivity;
+		$averageProductivity = getAverageProductivity ( $caze->caseId );
+		$productivityCoefficient = $productivity / $averageProductivity;
+		$caze->productivityCoefficient = $productivityCoefficient;
 	}
 	return $caze;
 }
@@ -118,18 +86,12 @@ function getAverageProductivity($id = "") {
 		$where = " where id <= 30";
 	}
 	$query = "select sum(size/caze.time)/count(size/caze.time) from caze " . $where;
-	$result = $db->query ( $query );
+	$db->query ( $query );
 	$avgProductivity = - 1;
-	while ( $row = mysqli_fetch_row ( $result ) ) {
+	while ( $row = $db->getMysqliArray () ) {
 		$avgProductivity = $row [0];
 	}
 	return $avgProductivity;
-}
-function print_message($message) {
-	global $showDetails;
-	if ($showDetails) {
-		echo $message . EOL;
-	}
 }
 
 ?>

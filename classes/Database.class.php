@@ -7,15 +7,22 @@ class Database {
 	private $password = "";
 	private $connection = null;
 	private $lastQuery = "";
+	private $mysqliResult;
 	function __construct() {
-		$this->connection = mysqli_connect ( $this->host, $this->user, $this->password, $this->database, $this->port );
+		$this->connection = new mysqli ( $this->host, $this->user, $this->password, $this->database, $this->port );
 	}
 	public function query($query) {
 		$mysqliResult = $this->connection->query ( $query );
 		$this->lastQuery = $query;
-		return $mysqliResult;
+		$this->mysqliResult = $mysqliResult;
+	}
+	public function getMysqliArray($returnType = MYSQL_NUM) {
+		return $this->mysqliResult->fetch_array ( $returnType );
 	}
 	public function getLastQuery() {
 		return $this->lastQuery;
+	}
+	public function close() {
+		$this->connection->close ();
 	}
 }
