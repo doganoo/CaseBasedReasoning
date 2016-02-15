@@ -12,7 +12,7 @@ class Util {
 			echo $message . EOL;
 		}
 	}
-	public static function getNearestValue($array) {
+	public static function getNearestNeighbor($array) {
 		$myNumber = - 1;
 		$idx = false;
 		foreach ( $array as $key => $value ) {

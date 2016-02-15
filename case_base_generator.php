@@ -7,22 +7,32 @@ include 'classes/Util.class.php';
 
 //variables
 $db = new Database ();
+$core = null;
 
 //constants
 define ( "EOL", "\n" );
 define ( "TAB", "\t" );
 
-//load cases and sample case
+//get case base
 $cazeArray = getCazes ();
+//get sample case by id
 $sampleCase = getSingleCaze ( 33 );
+//initializing the core
 $core = new Core ( $cazeArray, $sampleCase );
+//calculate similarities
 $simArray = $core->getSimilarity ();
-print_r ( $simArray );
-$nearestId = Util::getNearestValue ( $simArray );
+//get the nearest neighbor 
+$nearestId = Util::getNearestNeighbor ( $simArray );
+//load neighbor case
 $nCaze = getSingleCaze ( $nearestId );
+$nCazeProductivityCoefficient = $nCaze->productivityCoefficient;
+print_r ( $simArray );
+//calculating Productivity Coefficient
+//loading average productivity
 $avgCBProductivity = getAverageProductivity ();
-Util::printMezzage ( "Nearest Case: " . $nCaze->caseId );
-Util::printMezzage ( "NC Productivity: " . $nCaze->productivityCoefficient );
+//printing the results
+Util::printMezzage ( "Nearest Neighbor: " . $nCaze->caseId );
+Util::printMezzage ( "NC Productivity: " . $nCazeProductivityCoefficient );
 Util::printMezzage ( "AVG CB Productivity: " . $avgCBProductivity );
 //close database
 $db->close ();
