@@ -16,39 +16,39 @@ class Core {
 	function __construct($cazeArray, $query) {
 		if (is_array ( $cazeArray )) {
 			foreach ( $cazeArray as $singleCaze ) {
-				if (! is_a ( $singleCaze, "Caze" )) {
+				if (! $singleCaze instanceof Caze) {
 					die ( "Class Core: paramter cazearray has to be object type array/Caze" );
 				}
 			}
 		}
-		if (! is_a ( $query, "Caze" )) {
+		if (! $query instanceof Caze) {
 			die ( "Class Core: paramter query has to be object type Caze" );
 		}
 		$this->cazeArray = $cazeArray;
 		$this->query = $query;
 		
-		//4. PLTF Similarity Array
+		// 4. PLTF Similarity Array
 		$this->pltfSimArray = $this->generateSimilarityArray ( 3 );
 		
-		//8. Priority Similarity Array
+		// 8. Priority Similarity Array
 		$this->prioSimArray = $this->generateSimilarityArray ( 4 );
 		
-		//9. Project Similarity Array
+		// 9. Project Similarity Array
 		$this->projectSimArray = $this->generateSimilarityArray ( 10 );
 		
-		//10. PN Similarity Array
+		// 10. PN Similarity Array
 		$this->pnSimArray = $this->generateSimilarityArray ( 3 );
 		
-		//11. SA Similarity Array
+		// 11. SA Similarity Array
 		$this->saSimArray = $this->generateSimilarityArray ( 4 );
 		
-		//12. SC Similarity Array
+		// 12. SC Similarity Array
 		$this->scSimArray = $this->generateSimilarityArray ( 3 );
 		
-		//14. SC Similarity Array
+		// 14. SC Similarity Array
 		$this->sopSimArray = $this->generateSimilarityArray ( 3 );
 		
-		//17. TK Similarity Array
+		// 17. TK Similarity Array
 		$this->tkSimArray = $this->generateSimilarityArray ( 4 );
 	}
 	private function generateSimilarityArray($number) {
@@ -67,7 +67,7 @@ class Core {
 			Util::printMessage ( "Case Description - Case ID: " . $caze->caseId );
 			Util::printMessage ( EOL );
 			
-			//1. Project Leader
+			// 1. Project Leader
 			Util::printMessage ( "1. Attribut: Project Leader Experience" );
 			Util::printMessage ( "======================================" );
 			$c = $caze->projectLeaderExperience;
@@ -79,7 +79,7 @@ class Core {
 			Util::printMessage ( "======================================" );
 			Util::printMessage ( EOL );
 			
-			//2. Project Leader Similar Projects
+			// 2. Project Leader Similar Projects
 			Util::printMessage ( "2. Attribut: Project Leader Similar Projects" );
 			Util::printMessage ( "============================================" );
 			$c = $caze->projectLeaderSimilarProjects;
@@ -91,7 +91,7 @@ class Core {
 			Util::printMessage ( "============================================" );
 			Util::printMessage ( EOL );
 			
-			//3. Project Leader Success Rate
+			// 3. Project Leader Success Rate
 			Util::printMessage ( "3. Attribut: Project Leader Success Rate" );
 			Util::printMessage ( "============================================" );
 			$c = $caze->projectLeaderSuccessRate;
@@ -103,7 +103,7 @@ class Core {
 			Util::printMessage ( "============================================" );
 			Util::printMessage ( EOL );
 			
-			//4. Project Leader Team Familarity
+			// 4. Project Leader Team Familarity
 			Util::printMessage ( "4. Attribut: Project Leader Team Familarity" );
 			Util::printMessage ( "============================================" );
 			$c = $caze->projectLeaderTeamFamilarity;
@@ -115,7 +115,7 @@ class Core {
 			Util::printMessage ( "============================================" );
 			Util::printMessage ( EOL );
 			
-			//5. Customer ID
+			// 5. Customer ID
 			Util::printMessage ( "5. Attribut: Customer ID" );
 			Util::printMessage ( "==========================" );
 			$c = $caze->customerId;
@@ -127,7 +127,7 @@ class Core {
 			Util::printMessage ( "==========================" );
 			Util::printMessage ( EOL );
 			
-			//6. Development Process
+			// 6. Development Process
 			Util::printMessage ( "6. Attribut: Development Process" );
 			Util::printMessage ( "================================" );
 			$c = $caze->developmentProcess;
@@ -139,7 +139,7 @@ class Core {
 			Util::printMessage ( "================================" );
 			Util::printMessage ( EOL );
 			
-			//7. Internal Flag
+			// 7. Internal Flag
 			Util::printMessage ( "7. Attribut: Internal Flag" );
 			Util::printMessage ( "===========================" );
 			$c = $caze->internalFlag;
@@ -151,7 +151,7 @@ class Core {
 			Util::printMessage ( "===========================" );
 			Util::printMessage ( EOL );
 			
-			//8. Priority
+			// 8. Priority
 			Util::printMessage ( "8. Attribut: Priority" );
 			Util::printMessage ( "=====================" );
 			$c = $caze->priority;
@@ -163,7 +163,7 @@ class Core {
 			Util::printMessage ( "=====================" );
 			Util::printMessage ( EOL );
 			
-			//9. Project
+			// 9. Project
 			Util::printMessage ( "9. Attribut: Project" );
 			Util::printMessage ( "=====================" );
 			$c = $caze->project;
@@ -175,7 +175,7 @@ class Core {
 			Util::printMessage ( "=====================" );
 			Util::printMessage ( EOL );
 			
-			//10. Project Novelty
+			// 10. Project Novelty
 			Util::printMessage ( "10. Attribut: Project Novelty" );
 			Util::printMessage ( "=============================" );
 			$c = $caze->projectNovelty;
@@ -187,7 +187,7 @@ class Core {
 			Util::printMessage ( "=============================" );
 			Util::printMessage ( EOL );
 			
-			//11. System Architecture
+			// 11. System Architecture
 			Util::printMessage ( "11. Attribut: System Architecture" );
 			Util::printMessage ( "=================================" );
 			$c = $caze->systemArchitecture;
@@ -199,7 +199,7 @@ class Core {
 			Util::printMessage ( "=================================" );
 			Util::printMessage ( EOL );
 			
-			//12. System Criticality
+			// 12. System Criticality
 			Util::printMessage ( "12. Attribut: System Criticality" );
 			Util::printMessage ( "=================================" );
 			$c = $caze->systemCriticality;
@@ -211,7 +211,7 @@ class Core {
 			Util::printMessage ( "=================================" );
 			Util::printMessage ( EOL );
 			
-			//13. System Dependency
+			// 13. System Dependency
 			Util::printMessage ( "13. Attribut: System Dependency" );
 			Util::printMessage ( "================================" );
 			$c = $caze->systemDependency;
@@ -223,7 +223,7 @@ class Core {
 			Util::printMessage ( "================================" );
 			Util::printMessage ( EOL );
 			
-			//14. System Operating Mode
+			// 14. System Operating Mode
 			Util::printMessage ( "14. Attribut: System Operating Mode" );
 			Util::printMessage ( "===================================" );
 			$c = $caze->systemOperatingMode;
@@ -235,7 +235,7 @@ class Core {
 			Util::printMessage ( "===================================" );
 			Util::printMessage ( EOL );
 			
-			//15. System Special Reliability
+			// 15. System Special Reliability
 			Util::printMessage ( "15. Attribut: System Special Reliability" );
 			Util::printMessage ( "========================================" );
 			$c = $caze->systemSpecialReliability;
@@ -247,7 +247,7 @@ class Core {
 			Util::printMessage ( "========================================" );
 			Util::printMessage ( EOL );
 			
-			//16. Team Experience
+			// 16. Team Experience
 			Util::printMessage ( "16. Attribut: Team Experience" );
 			Util::printMessage ( "=============================" );
 			$c = $caze->teamExperience;
@@ -258,7 +258,7 @@ class Core {
 			$sum = $sum + $res;
 			Util::printMessage ( "=============================" );
 			Util::printMessage ( EOL );
-			//17. Test Kind
+			// 17. Test Kind
 			Util::printMessage ( "17. Attribut: Test Kind" );
 			Util::printMessage ( "=======================" );
 			$c = $caze->testKind;
@@ -270,7 +270,7 @@ class Core {
 			Util::printMessage ( "=======================" );
 			Util::printMessage ( EOL );
 			
-			//Ende
+			// Ende
 			Util::printMessage ( "==============================================" );
 			Util::printMessage ( "+" . TAB . "Summe aller s_i * w_i: " . TAB . TAB . $sum );
 			$sim = pow ( $sum, 1 / $this->alpha );
@@ -318,12 +318,12 @@ class Core {
 		$s = - 1;
 		Util::printMessage ( TAB . "wenn f(" . $q . "-" . $c . ") in dem Intervall [" . $t . ", " . ($t * - 1) . "] ist, dann ist y = 1" );
 		Util::printMessage ( TAB . "andernfalls wird die Formel: e^((f(" . $q . "-" . $c . ") + " . $t . ") * " . $a . ") ausgefuehrt" );
-		//zunaechst pruefen, ob x in einem akzeptablen bereich ist,
-		//bei dem gilt: f(q-c) = 1
+		// zunaechst pruefen, ob x in einem akzeptablen bereich ist,
+		// bei dem gilt: f(q-c) = 1
 		if ($x <= $t && $x >= ($t * - 1)) {
 			$s = 1;
 		} else {
-			//ansonsten nehme eine exponentiale Funktion: e^(((q-c)+t) * a) bzw. e^((-(q-c)+t) * a)
+			// ansonsten nehme eine exponentiale Funktion: e^(((q-c)+t) * a) bzw. e^((-(q-c)+t) * a)
 			$m = 1;
 			if ($x > 0) {
 				$m = - 1;

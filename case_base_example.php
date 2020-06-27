@@ -32,8 +32,8 @@ print_r ( $simArray );
 $avgCBProductivity = getAverageProductivity ();
 //printing the results
 Util::printMezzage ( "Nearest Neighbor: " . $nCaze->caseId );
-Util::printMezzage ( "NC Productivity: " . $nCazeProductivityCoefficient );
-Util::printMezzage ( "AVG CB Productivity: " . $avgCBProductivity );
+// Util::printMezzage ( "NC Productivity: " . $nCazeProductivityCoefficient );
+// Util::printMezzage ( "AVG CB Productivity: " . $avgCBProductivity );
 //close database
 $db->close ();
 
