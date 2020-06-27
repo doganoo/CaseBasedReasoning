@@ -1,6 +1,6 @@
 # CaseBaseReasoning
 
-# ATTENTION: THIS CODE IS ALMOST 4 YEARS OLD
+# ATTENTION: THIS CODE IS ALMOST A COUPLE OF YEARS OLD
 
 As we all evolve in coding, this code does not represent best practice, nor it has a clean code approach. It was part of a study project and denotes a part of the final exam :-)
 
