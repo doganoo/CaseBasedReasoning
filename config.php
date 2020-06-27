@@ -1,12 +1,4 @@
 <?php
-/*
- Application Name	: openCBR
- Application URL	: www.dogan-ucar.de/opencbr
- Version			: 0.0.1	
- Author				: Dogan Ucar
- Author URL			: www.dogan-ucar.de
- License			: GNU General Public License v3.0
- */
 /**
  *  Copyright (C) <2016>  <Dogan Ucar>
  *
@@ -22,11 +14,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further questions please visit www.dogan-ucar.de/opencbr
- *  
- *  @package openCBR
  */
-define ( "APPLICATION_NAME", "openCBR" );
-define ( "DEBUG", true );
-define ( 'ABSPATH', dirname ( __FILE__ ) . '/' );
+define("APPLICATION_NAME", "openCBR");
+define("DEBUG", true);
+define('ABSPATH', dirname(__FILE__) . '/');

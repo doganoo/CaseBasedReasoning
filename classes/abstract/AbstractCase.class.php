@@ -1,12 +1,4 @@
 <?php
-/*
- Application Name	: openCBR
- Application URL	: www.dogan-ucar.de/opencbr
- Version			: 0.0.1
- Author				: Dogan Ucar
- Author URL			: www.dogan-ucar.de
- License			: GNU General Public License v3.0
- */
 /**
  *  Copyright (C) <2016>  <Dogan Ucar>
  *
@@ -22,68 +14,78 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *  For further questions please visit www.dogan-ucar.de/opencbr
- *
- *  @package openCBR
  */
+
 abstract class AbstractCase {
-	private $manufacturer;
-	protected $manufacturerWeight;
-	private $price;
-	protected $priceWeight;
-	private $inch;
-	protected $inchWeight;
-	
-	//factory functions
-	public static function factory() {
-		return new Caze ();
-	}
-	
-	//functions
-	public function setManufacturer($manufacturer) {
-		if (! is_string ( $manufacturer )) {
-			//TODO Exception Handling
-		}
-		if (! Util::isEmpty ( $manufacturer )) {
-			$this->manufacturer = $manufacturer;
-		} else {
-			//TODO Exception Handling
-		}
-	}
-	public function setPrice($price) {
-		if (! is_string ( $price )) {
-			//TODO Exception Handling
-		}
-		if (! Util::isEmpty ( $price )) {
-			$this->price = $price;
-		} else {
-			//TODO Exception Handling
-		}
-	}
-	public function setInch($inch) {
-		if (! is_string ( $inch )) {
-			//TODO Exception Handling
-		}
-		if (! Util::isEmpty ( $inch )) {
-			$this->inch = $inch;
-		} else {
-			//TODO Exception Handling
-		}
-	}
-	public function getManufacturer() {
-		return $this->manufacturer;
-	}
-	public function getPrice() {
-		return $this->price;
-	}
-	public function getInch() {
-		return $this->inch;
-	}
-	
-	//abstract functions
-	public abstract function getCaseDescription();
-	protected abstract function setManufacturerWeight($weight);
-	protected abstract function setPriceWeight($weight);
-	protected abstract function setInchWeight($weight);
-} 
+
+    protected $manufacturerWeight;
+    protected $priceWeight;
+    protected $inchWeight;
+    private   $manufacturer;
+    private   $price;
+    private   $inch;
+
+    //factory functions
+
+    public static function factory() {
+        return new Caze ();
+    }
+
+    //functions
+
+    public function getManufacturer() {
+        return $this->manufacturer;
+    }
+
+    public function setManufacturer($manufacturer) {
+        if (!is_string($manufacturer)) {
+            //TODO Exception Handling
+        }
+        if (!Util::isEmpty($manufacturer)) {
+            $this->manufacturer = $manufacturer;
+        } else {
+            //TODO Exception Handling
+        }
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function setPrice($price) {
+        if (!is_string($price)) {
+            //TODO Exception Handling
+        }
+        if (!Util::isEmpty($price)) {
+            $this->price = $price;
+        } else {
+            //TODO Exception Handling
+        }
+    }
+
+    public function getInch() {
+        return $this->inch;
+    }
+
+    public function setInch($inch) {
+        if (!is_string($inch)) {
+            //TODO Exception Handling
+        }
+        if (!Util::isEmpty($inch)) {
+            $this->inch = $inch;
+        } else {
+            //TODO Exception Handling
+        }
+    }
+
+    //abstract functions
+
+    public abstract function getCaseDescription();
+
+    protected abstract function setManufacturerWeight($weight);
+
+    protected abstract function setPriceWeight($weight);
+
+    protected abstract function setInchWeight($weight);
+
+}
